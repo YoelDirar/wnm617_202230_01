@@ -1,0 +1,21 @@
+.accordion dt{
+	background-color:  blue;
+	font-size:1em;
+}
+ /* tab group*/
+
+.tabgroup .tabs {
+	diplay: flex;
+	border-bottom: 1px solid #ddd;
+
+}
+.tabgroup .tab{
+padding:  0.5em 1em;
+
+}
+
+.tabgroup .contents{
+
+}
+
+.tabgroup .content 
