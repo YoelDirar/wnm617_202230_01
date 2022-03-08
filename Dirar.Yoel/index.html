@@ -1,1 +1,246 @@
-index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Life of Squirrel's</title>
+
+   <base href="/aau/wnm617/Dirar.Yoel/">
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   <link rel="stylesheet" href="css/app.css">
+
+<link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+   <script src="js/app.js"></script>
+</head>
+<body>
+<!------------Sign_in page------------>
+   <section data-role="page" id="signin-page">
+      <div data-role="main">
+         <form id="signin-form" class="form">
+            <div class="form-control">
+               <label for="signin-username" class="form-label">Username</label>
+               <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
+            </div>
+            <div class="form-control">
+               <label for="signin-password" class="form-label">Password</label>
+               <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Type your Password">
+            </div>
+            <!-- <input type="submit" data-role="none"> -->
+            <div class="form-control">
+               <a href="#home-page" class="form-button">Submit</a>
+            </div>
+             <header data-role="sign_up_header">
+         <h1>New to Life of Squirrel's</h1>
+            <div class="sign_up">
+               <a href="#new-user-page" class="new-user-page"> Sign Up</a>
+            </div>
+        </form>
+      </div>
+   </section>
+<!------------Sign_up_page------------>
+  <!-- <section data-role="page" id="sign_up_page">
+        <header data-role="header">
+            <h1>Sign Up Page</h1>
+            <a href="#" data-rel="back">Back</a>
+        </header>            
+        <div data-role="main">
+            <form id="signup-form" class="form">
+             
+                <div class="form-control">
+                    <label for="signup-username">Username</label>
+                    <input type="text" placeholder="Pick a Username" id="signup-username" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <label for="signup-password">Password</label>                    
+                    <input type="password" placeholder="Password" id="signup-password" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">            
+                    <a href="#user-edit-page" class="form-button">Submit</a>
+                </div>
+            
+            </form>
+        </div>
+    </section> -->
+
+<!------------main-page-------------------------------------->
+   <section data-role="page" id="home-page">
+      <div data-role="main">
+         map of squirrel sightings
+      </div>
+
+         <div class="card">
+        
+
+            <figure class="map">
+               <img src="https://via.placeholder.com/375X336?text=map" alt="map">
+                    <figcaption>map</figcaption>
+            </figure>
+
+         
+         </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+<!------------info-page---------------------------------------->
+ <section data-role="page" id="info">
+      <div data-role="main">
+      learn about the three squirrels
+      </div>
+      sq1 
+      sq2 
+      sq3
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#home-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+<!------------Animal_list_page--------------------------------->
+   <section data-role="page" id="list-page">
+      <header data-role="header">
+         <h1>Squirrel List</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#">Add</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <!-- ul>li*10>a[href=#animal-profile-page]>{Animal $} -->
+         <ul>
+            <li><a href="#squirrel-profile-page">squirrel 1</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 2</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 3</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 4</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 5</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 6</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 7</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 8</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 9</a></li>
+            <li><a href="#squirrel-profile-page">squirrel 10</a></li>
+         </ul>
+      </div>
+      <footer data-role="footer">
+         <ul>
+         <li><a href="#home-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+
+<!------------squirrel_profile_page------------>
+   <section data-role="page" id="squirrel-profile-page">
+      <header data-role="header">
+         <h1>Squirrel</h1>
+         <ul>
+            <li><a href="#squirrel_edit_page" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+      Squirrel profile
+         <a href="#squirrel-edit-page">Edit Squirrel</a>
+      </div>
+
+
+       <footer data-role="footer">
+         <ul>
+               <li><a href="#home-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+<!------------squirrel_edit_page------------------------------------------>
+    <section data-role="page" id="squirrel-edit-page">
+    
+         <h1>Squirrel edit page</h1>
+      <footer data-role="footer">
+         <ul>
+        <li><a href="#home-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+     
+
+<!------------user_profile_page------------------------------------------>
+    
+
+   <section data-role="page" id="user-profile-page">
+      <div data-role="main">
+         user profile
+         <a href="#user-edit-page">Edit</a>
+      </div>
+
+      <footer data-role="footer">
+         <ul>
+                <li><a href="#home-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+<!------------new_user_page------------------------------------------>
+   <section data-role="page" id="new-user-page">
+      <header data-role="header">
+         
+
+
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+       
+         </ul>
+      </header>
+      <div data-role="main">
+    
+      
+     <h3>Fill out information below</h3>
+          <form id="sign-up" class="form">
+     
+
+            <label class="form-label">First Name</label>
+            <input type="text" id="firstname"data-role="none"placeholder="First Name"  class="form-input">
+
+             <label class="form-label">Last Name</label>
+            <input type="text" id="lastname" data-role="none" placeholder="Last Name"  class="form-input">
+
+             <label class="form-label">Birthday</label>
+               <input type="date" id="birthdate"  data-role="none"  class="form-input"><br>
+          
+
+             <label class="form-label">UserName</label>
+            <input type="text" placeholder="Username" id="username" data-role="none" class="form-input">
+
+            <label class="form-label">Password</label>
+            <input type="password" placeholder="Password"  data-role="none"  id="password" class="form-input">
+            
+          
+          
+         </form>
+         </div>
+         <div class="form-control">
+               <a href="#home-page" class="form-button">Submit</a>
+            </div>
+
+
+
+

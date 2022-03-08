@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JQuery MObile</title>
+
+	<base href="/aau/wnm617/Dirar.Yoel/demo">
+
+
+	
+	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+		<section data-role="page" id="page1">
+		<header data-role="header">
+			<h1>Page 1</h1>
+		</header>
+		<div data-role="main">
+			This is Page 1 
+			<p><a href="#page2">Page 2</a></p>
+			<p><a href="#page3">Page 3</a></p>
+		</div>
+		<footer data-role="footer">
+			<h2>Page 1</h2>
+		</footer>
+	</section>
+
+	<section data-role="page" id="page2">
+		<header data-role="header">
+			<h1>Page 2</h1>
+		</header>
+		<div data-role="main">
+			This is Page 2 
+			<p><a href="#page1">Page 1</a></p>
+			<p><a href="#page3">Page 3</a></p>
+		</div>
+		<footer data-role="footer">
+			<h2>Page 2</h2>
+		</footer>
+	</section>
+
+	<section data-role="page" id="page3">
+		<header data-role="header">
+			<h1>Page 3</h1>
+			<ul><li><a href="#" data-rel="back">Back</a></li></ul>
+		</header>
+		<div data-role="main">
+			This is Page 3 
+		</div>
+	</section>
+<section data-role="page" id="page4">
+		<header data-role="header">
+			<h1>Page 4</h1>
+			<ul><li><a href="#" data-rel="back">Back</a></li></ul>
+		</header>
+		<div data-role="sign_up">
+			This is Page 4
+		</div>
+	</section>
+</body>
+</html>
