@@ -1,20 +1,23 @@
+
 $(() => {
-	checkUserId();
-	//EVENT DELEGATION//
-	$(document)
+   checkUserId();
 
-	//Form submissions 
-	.on ("submit", "#signin-form", function(e){
-		e.preventDefault();
-		console.log(e)
-		checkLoginForm();
-	})
+   // EVENT DELEGATION
+   $(document)
 
-	// CLICKS
-	.on("click", ".js-logout", function(){
-		sessionStorage.removeItem("userId");
-		checkUserId();
-	})
+   // FORM SUBMISSIONS
+   .on("submit", "#signin-form", function(e) {
+      e.preventDefault();
+      checkLoginForm();
+   })
+
+
+   // CLICKS
+   .on("click", ".js-logout", function() {
+      sessionStorage.removeItem("userId");
+      checkUserId();
+   })
+
 
    // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {
@@ -30,8 +33,22 @@ $(() => {
       $(target).toggleClass("active")
    })
    .on("click", "[data-activateone]", function() {
-      let target = $(this).data("activate");
+      let target = $(this).data("activateone");
       $(target).addClass("active")
          .siblings().removeClass("active")
    })
+
+   ;
+
+   $("[data-template]").each(function(){
+      let target = $(this).data("template");
+      $(this).html($(target).html())
+   });
+
+   [,"#recent-page","#list-page","#user-profile-page"].forEach((p,i)=>{
+      if(window.location.hash === p) {
+         $(`.nav-icon-set li:nth-child(${i})`).addClass("active");
+      }
+   });
+
 });
