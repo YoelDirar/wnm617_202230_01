@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dog Tags Pet Confirmed </title>
+   <title> Secret Squirrel's</title>
 
    <base href="/aau/wnm617/Dirar.Yoel/">
 
@@ -23,10 +23,10 @@
 
     <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch"></div>
+      
         <div class="text-center" style="text-align: center">
           <img src="imgs/logo.png"  class="hero-image" alt="hero">
-             <h1 class = "hero-title">DOG TAGS</h1>
+             <h1 class = "hero-title">Secret Squirrel's</h1>
          </div>
   
          <form id="signin-form" class="form" data-ajax="false">
@@ -40,9 +40,9 @@
             </div>
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
-               <button type="submit" class="form-button" data-role="none">Submit</button>
+               <button type="submit" class="form-button" data-role="none" style="text-align:">Submit</button>
             </div>
-          
+          <br>
             <div class="sign-up-form-control" >
                <p>New to the app? <a href="#signup-page" class="signup-page-signup-link">Sign Up!</a></p>
             </div>
@@ -85,20 +85,26 @@
 
 
 <section data-role="page" id="recent-page">
-      <div data-role="main" class="map-placeholder">
-         <div class="recent-search">
+   <div data-role="main" class="map-placeholder">
+      <div class="recent-search">
             <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
                <input type="search" data-role="none" placeholder="Search">
             </form>
-            <div class="flex-none" style="line-height:3rem;padding:0 0.5em">
-               <img src="#" style="vertical-align: middle;" alt="" class="icon">icon
-            </div>
+
+                <div class="flex-none" style="line-height:3rem; padding:8 0.5em; position: absolute ;top:5vh;right:20vw">
+                   <i class= "fa-solid fa-filter"></i> 
+                </div>
+       </div>
+
+         <div class="marker" style="position:absolute;top:50vh;left:20vw" data-activate="#map-drawer">
+            <i class= "fa-solid  fa-4x fa-map-pin"></i>
+
          </div>
-         <div class="marker" style="position:absolute;top:30vh;left:20vw" data-activate="#map-drawer">
-            <img src="#" alt="" class="icon">
-         </div>
-      </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
+
+   </div>
+
+ <footer data-role="footer" data-template="#footer-template"></footer>
+
 
       <div class="modal" id="map-drawer">
          <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
@@ -112,76 +118,21 @@
                
             </div>
             <div class="modal-body">
-               content!
+              
             </div>
          </div>
       </div>
    </section>
 
 
-<!----------------------map main page----------------------------
-   <section data-role="page" id="recent-page">
-       <header data-role="header">
-         <h1>Map</h1>
-         <ul>
-            <li class= "info-drawer" data-activate="#map-drawer">INFO </li>
-            <li class="flex-stretch"></li>
-             <li><i class="fa-solid fa-bars"></i><a  class="hamburger-menu" data-toggle="#menu"></a></li>
-         </ul>
-      </header>
-   
-      <div data-role="main" class="map-placeholder">
-         <div> <i class="fa-solid fa-location-xmark"></i></div>
-         <div class="info-drawer" style="position:absolute;top:30vh;left:20vw" data-activate ="#map-drawer">
-
-            <img src="../imgs/icons/marker.svg" alt="marker" class="icon">
-         </div>
-      </div>
-      <div class=" map-menu-form-control">
-       <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
-               <input type="search" data-role="none" placeholder="Search">
-            </form>
-            ---<div class="flex-none" style="line-height:.5rem;padding:0 0.5em">
-               <img src="#" style="vertical-align: middle;" alt="" class="icon">
-            </div>---->
-
-    
-
-     <!---------------------- <div class="hamburger-menu" id="menu">
-          <div class="hamburger-menu-back transparent passthrough" data-deactivate="#map-drawer"></div>
-         <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </div> --------------------------
-
-      <div class="modal" id="map-drawer">
-         <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
-         <div class="modal-drawer left">
-            <div class="modal-head display-flex">
-               <div class="flex-none">sidebar</div>
-               <div class="flex-stretch"></div>
-               <div class="flex-none">
-                  <a href="#" data-deactivate="#map-drawer">&times;</a>
-               </div>
-               
-            </div>
-            <div class="modal-body">
-               content!
-            </div>
-         </div>
-      </div>
-   </section>
-   -------------------------->
-<!----------------------Animal list page ---------------------------->
 
    
 
       <div class="modal" id="list-add-animal-modal">
          <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
          <div class="modal-popup">
-            <div class="modal-head">Add Animal</div>
+            <div class="modal-head">Add 
+            A Squirrel </div>
             <form class="modal-body overscroll" data-ajax="false">
                <div class="form-control">
                   <label for="#list-add-animal-name" class="form-label">name</label>
@@ -191,29 +142,22 @@
                   <label for="#list-add-animal-type" class="form-label">type</label>
                   <input type="text" class="form-input" placeholder="Type a Type" data-role="none" id="list-add-animal-type">
                </div>
-               <div class="form-control">
-                  <label for="#list-add-animal-breed" class="form-label">breed</label>
-                  <input type="text" class="form-input" placeholder="Type a Breed" data-role="none" id="list-add-animal-breed">
-               </div>
+              
                <div class="form-control">
                   <label for="#list-add-animal-description" class="form-label">description</label>
                   <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
                </div>
-               <!-- <p>Nostrum quos delectus blanditiis aperiam! Fuga excepturi, quibusdam, asperiores quis culpa vel ipsum, voluptatem quas officiis a rem nesciunt voluptatum accusamus deserunt consequuntur similique delectus dicta, quod odio. Laboriosam incidunt exercitationem ipsa necessitatibus enim neque. Quisquam totam rerum quia, nobis deleniti quae, delectus hic. Consectetur laudantium quis sunt aperiam hic quidem, velit dolores praesentium sapiente. Non, architecto, quas. Eaque, modi.</p>
-               <div class="display-flex">
-                  <div class="flex-stretch"></div>
-                  <div class="flex-none"><button class="form-button">click</button></div>
-               </div> -->
+              
             </form>
             <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">
-               Submit
+            <button type="submit" class="module-button" data-role="none">Submit</button>
             </div>
          </div>
       </div>
    </section>
  <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Animal List</h1>
+         <h1>Squirrel List</h1>
          <ul>
             <li class="flex-stretch"></li>
          </ul>
@@ -224,94 +168,49 @@
             <!-- li.animal-list-item*10>a[href=#animal-profile-page]>(div.animal-list-image>img[src='https://via.placeholder.com/400x400/?text=Animal$'])+div.animal-list-body>(div.animal-list-name>{Animal $})+(div.animal-list-type>{Type})+(div.animal-list-breed>{Breed}) -->
             <li class="animal-list-item">
                <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal1" alt=""></div>
+                  <div class="animal-list-image"><img src="imgs/shocks.jpg" alt=""></div>
                   <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 1</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
+                     <div class="animal-list-name">Shocks</div>
+                     <br>
+                     <div class="animal-list-type">Western gray squirrel  </div>
+                     
                   </div>
                </a>
             </li>
             <li class="animal-list-item">
                <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal2" alt=""></div>
+                  <div class="animal-list-image"><img src="imgs/Wings.jpg" alt="Wings"></div>
                   <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 2</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
+                     <div class="animal-list-name">Wings</div>
+                     <br>
+                     <div class="animal-list-type">Red squirrel</div>
+                     
                   </div>
                </a>
             </li>
             <li class="animal-list-item">
                <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal3" alt=""></div>
+                  <div class="animal-list-image"><img src="imgs/Smiily .jpg" alt="Smiley"></div>
                   <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 3</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
+                     <div class="animal-list-name">Smiley 3</div>
+                                   <br>
+                     <div class="animal-list-type">Western gray squirrel  </div>
                   </div>
                </a>
             </li>
             <li class="animal-list-item">
                <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal4" alt=""></div>
+                  <div class="animal-list-image"><img src="imgs/Chewy.jpg" alt=""></div>
                   <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 4</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
+                     <div class="animal-list-name">Chewy 4</div>
+                                <br>
+                     <div class="animal-list-type">Western gray squirrel  </div>
                   </div>
                </a>
             </li>
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal5" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 5</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
-                  </div>
-               </a>
-            </li>
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal6" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 6</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
-                  </div>
-               </a>
-            </li>
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal7" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 7</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
-                  </div>
-               </a>
-            </li>
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal8" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 8</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
-                  </div>
-               </a>
-            </li>
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="https://via.placeholder.com/400x400/?text=Animal9" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Animal 9</div>
-                     <div class="animal-list-type">Type</div>
-                     <div class="animal-list-breed">Breed</div>
-                  </div>
-               </a>
-            </li>
+        
+        
+      
             
          </ul>
 
@@ -322,7 +221,7 @@
       <div class="modal" id="list-add-animal-modal">
          <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
          <div class="modal-popup">
-            <div class="modal-head">Add Animal</div>
+            <div class="modal-head">Add Squirrel</div>
             <form class="modal-body overscroll" data-ajax="false">
                <div class="form-control">
                   <label for="#list-add-animal-name" class="form-label">name</label>
@@ -357,7 +256,7 @@
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Animal</h1>
+         <h1>Squirrel</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
          </ul>
@@ -367,7 +266,7 @@
          <a href="#animal-edit-page">Edit</a>
       </div>
    </section>
-
+<!---------------USER PROFILE PAGE---------------------------------------->
    <section data-role="page" id="user-profile-page">
       <header data-role="header">
          <ul>
@@ -377,92 +276,132 @@
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
-         <h1 class="user-profile-header">PROFILE</h1>
-         <div class="form-control">
+     
+       <h1 class="text-center"> PROFILE</h1>
+     
+   <div data-role="main" class ="overscroll">
+        <div class="flex-stretch"></div>
+         <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" style="text-align:center";> 
+     
 
-             <div class="profile-img-container">
-                 <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" >
-            </div>
-         </div>
-         <!-- <div class="profile-page-form-control"> -->
-            <div class="display-flex" style="align-items:center">
-               <div class="flex-stretch"><span>Name</span></div>
-               <div class="flex-none">
-                  <input type="text" id="user-edit-First-Name" data-role="none" class="profile-form-input">
+<form class="form" id="user-edit-form">
+ <div class="form-control"> 
+             <label for="user-name" class="form-label">Username</label>
+                        <input type="text" id="user-name" data-role="none" class="form-input"
+                        placeholder=>
+                    </div>
+                    <div class="form-control"> 
+                        <label for="user-email" class="form-label">Email</label>
+                        <input type="email" id="user-email" data-role="none" class="form-input"
+                        placeholder="">
+                    </div>
+                    <div class="form-control"> 
+                        <label for="user-birth" class="form-label">Date of Birth</label>
+                        <input type="date" id="user-birth" data-role="none" class="form-input">
+                    </div>    
+                       <div class="form-control">
+                        <label for="user-password" class="form-label">Password</label>
+                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
+                    </div> 
+                    <div class="form-control">
+                        <label for="user-password" class="form-label">Confirm Password</label>
+                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
+                    </div> 
+                    
+              
                </div>
-            </div>
-            <div class="display-flex" style="align-items:center">
-               <div class="flex-stretch"><span>Name</span></div>
-               <div class="flex-none">
-                  <input type="text" id="user-edit-Last-Name" data-role="none" class="profile-form-input" placeholder="Last Name ">
-               </div>
-            <!-- </div> -->
-         </div> 
-      </div>      
+  
+  </div>
+</form>
+</div>
 
-      <footer data-role="footer">
-         <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
+            
+      
+             
+<footer data-role="footer" data-template="#footer-template"></footer>
 
-   </section>
+    </section>
 
-   <section data-role="page" id="user-edit-page">
-      <header data-role="header">
-         <h1>Edit Profile</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#list-page">Save</a></li>
-         </ul>
+<!---------------EDIT USER-PROFILE PAGE---------------------------------------->
+
+
+<section data-role="page" id="user-edit-page">
+   <!-- <header class="display-flex  flex-justify-between header" data-role="none">
+      <a href="#" data-rel="back"><i class="fa-solid fa-xl fa-chevron-left" style="padding-left:1.5em; padding-top:1.5em";></i></a>
+   </header> -->
+   <header data-role="header">
+         <a href="#" data-rel="back"><i class="fa-solid fa-xl fa-chevron-left" style="padding-left:1.5em; padding-top:1.5em";></i></a>
+       
       </header>
-    <div data-role="main" class="display-flex flex-column">
+  <h1 class="text-center">EDIT PROFILE</h1>
+   
+   <div data-role="main" class ="overscroll">
+ <div class="flex-stretch"></div>
+ 
+      <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" style="text-align:center";> 
+      <input type= "file"  name="" data-role="none" class="form-input"; accept="image/*">
+     <h2 class="text-center">EDIT PICTURE</h2>
+     
+<!-- 
+      <input type="text" name="" data-role="none" class="form-input"placeholder="User Name">
+    
+      <input type ="email" name="" data-role="none" class="form-input" placeholder="Email ID">
+      <input type="text" name="" data-role="none" class="form-input" placeholder="PHONE NUMBER">
+      <input type="text" name=""  data-role="none" class="form-input"placeholder="Date of Birth">
+      <input type="text" name=""  data-role="none" class="form-input"placeholder="GENDER">
+   -->
+ 
+    
 
-         <div class="form-control">
-
-             <div class="profile-img-container"><span>Profile Picture</span>
-                 <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" >
-            </div>
-         </div>
-         <!-- <div class="profile-page-form-control"> -->
-            <div class="display-flex" style="align-items:center">
-               <span>Username</span><div class="flex-stretch"></div>
-               <div class="flex-none">
-                  <input type="text" id="user-edit-First-Name" data-role="none" class="profile-form-input">
+<form class="form" id="user-edit-form">
+ <div class="form-control"> 
+             <label for="user-name" class="form-label">Username</label>
+                        <input type="text" id="user-name" data-role="none" class="form-input"
+                        placeholder=>
+                    </div>
+                    <div class="form-control"> 
+                        <label for="user-email" class="form-label">Email</label>
+                        <input type="email" id="user-email" data-role="none" class="form-input"
+                        placeholder="">
+                    </div>
+                    <div class="form-control"> 
+                        <label for="user-birth" class="form-label">Date of Birth</label>
+                        <input type="date" id="user-birth" data-role="none" class="form-input">
+                    </div>    
+                       <div class="form-control">
+                        <label for="user-password" class="form-label">Password</label>
+                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
+                    </div> 
+                    <div class="form-control">
+                        <label for="user-password" class="form-label">Confirm Password</label>
+                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
+                    </div> 
+                     <a href="#recent-page" class="form-button" style= "float: left">Save</a>
+                    </div>
+              
                </div>
-            </div>
-
-            <div class="display-flex" style="align-items:center">
-               <span class= "first-name-lable">First Name</span><div class="flex-stretch"></div>
-               <div class="flex-none">
-                  <input type="text" id="user-edit-Last-Name" data-role="none" class="profile-form-input" placeholder="Last Name ">
-               </div>
-            <!-- </div> -->
-         </div> 
-      </div>      
-      <footer data-role="footer">
-         <p>Call to action</p>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
+  
+  </div>
+</form>
+</div>
+   <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">
+   </section>
+ 
 
    </section>
    <script type="text/template" id="footer-template">
       
       <ul class="nav-icon-set">
          <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(1)">
-           <i class="fa-solid fa-map"></i>
+           <span class="nav-icon"> <i class="fa-solid fa-map"></i></span>
             <span class="nav-icon-label">Recent</span>
          </a></li>
          <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
-           <i class="fa-duotone fa-clipboard-list"></i>
+           <span class="nav-icon"> <i class="fa-duotone fa-list"></i></span>
             <span class="nav-icon-label">List</span>
          </a></li>
          <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
-        <i class="fa-duotone fa-user"></i>
+        <span class="nav-icon"> <i class="fa-solid fa-user"></i></span>
             <span class="nav-icon-label">Profile</span>
          </a></li>
       </ul>
