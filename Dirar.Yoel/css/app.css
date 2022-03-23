@@ -52,16 +52,17 @@ margin-bottom:20vmin
 
 /* hero */ 
 .hero-image{
-  width:50vmin;
+  width: 91vmin;
   height:50vmin;
   text-align:center;
-
+  margin-top: 71px;
 }
 
 .hero-title{
    font-size: 1em;
    text-align:center;
-
+    margin-top: -23px;
+    margin-bottom: 0px;
 margin-right: 10vmin;
 margin-left: 10vmin;
 border-radius: 15px;
@@ -133,6 +134,7 @@ padding-left: ;
    padding: 0 2em;
    margin-top:2em;
    width: 75%;
+   margin-left: 39px;
 }
 .hotdog input {
    border-width: 0;
@@ -239,7 +241,7 @@ font-size: 1.5em ;
 
 .text-center{
    text-align: center;
-   font-size:1.5em;
+   font-size:1em;
 }
 
 
@@ -383,19 +385,17 @@ font-size: 1.5em ;
 
 .module-button {
     display: inline-block;
-    border-radius: 25px;
+    border-radius: 17px;
     border: 1px solid black;
-  box-shadow: 3px 5px 5px black;
- color:  black;
+    box-shadow: 3px 5px 5px black;
+    color:  black;
     background-color: var(--color-main-light);
     font: inherit;
-    padding: 0.5em 2em;
+    padding: -2.5em 10em;
     margin: 0;
     outline: 0;
     text-align: center;
-   
-
- 
+    width: 5em;
  }
 .modal-body {
    background-color: white;
@@ -487,8 +487,28 @@ font-size: 1.5em ;
    width: 7.5em;
    height: 5.5em;
    vertical-align: text-bottom;
-border-radius:1.5em;
-margin-top: .5em;
+   border-radius:1.5em;
+   margin-top: .5em;
+   /* margin-left: 7.5em; */
+}
+.animal-profile-image{
+  
+   vertical-align: text-bottom;
+   border-radius:1.5em;
+   margin-top: .5em;
+   /* margin-left: 7.5em; */
+       width: 300px;
+    margin-left: 37px;
+}
+
+.animal-edit-image{
+       width: 7.5em;
+    height: 5.5em;
+    vertical-align: text-bottom;
+    border-radius: 1.5em;
+    margin-top: 0.5em;
+    width: 300px;
+    height: 200px;
 }
 .animal-list-body {
    padding: 1em;
@@ -533,8 +553,24 @@ margin-top: .5em;
 }
 
 
+.animal-edit-image{
+      width: 7.5em;
+      height: 5.5em;
+      vertical-align: text-bottom;
+      border-radius:1.5em;
+      margin-top: .5em;
+      width: 300px;
+      height: 200px;
+}
 
+.form-input-img{
+       padding-left: 10em;
+   
+    padding-top: 10px;
+  
+    padding-left: 20;
 
+}
 
 /* Layout Classes */
 
