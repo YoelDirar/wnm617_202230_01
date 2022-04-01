@@ -24,7 +24,7 @@ font-style: normal;*/
 body {
    margin: 0;
    font-size: 100%;
-   font-family: var(--font-sans-serif);
+   font-family: var(--font-serif);
    background-color: var(--color-neutral-medium);
 }
 
@@ -55,22 +55,23 @@ margin-bottom:20vmin
   width: 91vmin;
   height:50vmin;
   text-align:center;
-  margin-top: 71px;
-}
+  margin-top: 22px;
+}D
 
 .hero-title{
-   font-size: 1em;
+   font-size: 2.2em;
    text-align:center;
-    margin-top: -23px;
-    margin-bottom: 0px;
-margin-right: 10vmin;
-margin-left: 10vmin;
-border-radius: 15px;
+   margin-top: -23px;
+   margin-bottom: 0px;
+   margin-right: 10vmin;
+   margin-left: 10vmin;
+   border-radius: 15px;
 }
 
 .sign-up-form-control{
    text-align:center;
    font-size:1em;
+   margin-right: auto;
 }
 .signup-page-signup-link{
    color: var(--color-neutral-lighter) ;
@@ -84,9 +85,10 @@ color:  var(--color-neutral-lighter);
 
 .form-control {
    margin: 1em 0;
-   width: 90%;
-   padding-left: .5em;
+   width: 100%;
+   
    align-items: center;
+   padding: 0em;
 }
 .ui-mobile .form-label {
    font-size: 0.8em;
@@ -116,8 +118,8 @@ padding-left: ;
 .form-button {
     display: inline-block;
     border-radius: 25px;
-    width: 25%;
-    border: 1px solid black;
+    width: 100%;
+    border:  none;
     background-color: var(--color-main-light);
     font: inherit;
     padding: 0.5em 1em;
@@ -125,8 +127,41 @@ padding-left: ;
     outline: 0;
     text-align: center;
     text-decoration: none;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 2px 5px 5px 0px  var(--color-neutral-dark);
  }
+.sign-up-text{
+   /* margin-left: -13em; */
+   margin-top: 0;
+}
+
+hr{
+   margin-top: 27px;
+     /* color: #e4dddd; */
+     /* border: none; */
+    
+     width: 100%;
+     align-content: center;
+     border-bottom:0;
+     border-bottom: 2px solid var(--color-neutral-light);
+}
+ .sign-up-button{
+       display: inline-block;
+       border-radius: 25px;
+       margin: 0;
+       width: 30%;
+       border: none;
+       /* border: 1px solid black; */
+       background-color: var(--color-main-light);
+       font: inherit;
+       padding: 0.5em 1em;
+       /* margin: 0; */
+       outline: 0;
+       text-align: center;
+       text-decoration: none;
+       box-shadow: 3px 5px 5px black;
+ }
+
+
 .hotdog {
    background-color: white;
    border-radius: 2em;
@@ -164,7 +199,7 @@ font-size: 1.5em ;
 
 #signin-form,
 #signup-form {
-   padding: 1em;
+   padding: 0em;
 }
 
 
@@ -181,6 +216,9 @@ font-size: 1.5em ;
    width: 100%;
    height: 100%;
    overflow: hidden;
+}
+.ui-mobile .form-label{
+   margin: -.5rem 1em;
 }
 [data-role="main"] {
    flex: 1 1 100%;
@@ -246,16 +284,16 @@ font-size: 1.5em ;
 
 
 .profile-img{
- width: 7.8em;
- height: 7.8em;
+ width: 6em;
+ height: 6em;
  border-radius: 50%;
  object-fit: cover;
  text-align: center;
-    margin-left: 30%;
-    border: 3px solid yellow;
-        text-align: center;
-    margin-top: -30px;
-    margin-bottom: 20px;
+ margin-left: 38%;
+ border: 3px solid var(--color-main-light);
+ text-align: center;
+ margin-top: 17px;
+ margin-bottom: 0px;
 }
 .profile-page-form-control{
    border: 1px solid green;
@@ -306,7 +344,11 @@ font-size: 1.5em ;
    padding-right: -191px;
 }
 
-
+.user-name{
+       margin-bottom: 10px;
+    margin-top: 0px;
+    height: 0px;
+}
 
 /*.hamburger-menu {
    position: absolute;

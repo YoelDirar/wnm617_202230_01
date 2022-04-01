@@ -20,7 +20,7 @@
 
 </head>
 <body>
-
+<!---------------SIGN-IN-PAGE---------------------------------------->
     <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
       
@@ -31,59 +31,93 @@
   
          <form id="signin-form" class="form" data-ajax="false">
             <div class="form-control">
-               <label for="signin-username" class="form-label">Username</label>
+              <!--  <label for="signin-username" class="form-label">Username</label> -->
                <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
             </div>
             <div class="form-control">
-               <label for="signin-password" class="form-label">Password</label>
+               <!-- <label for="signin-password" class="form-label">Password</label> -->
                <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
                <button type="submit" class="form-button" data-role="none" style="text-align:">Submit</button>
             </div>
-          <br>
-            <div class="sign-up-form-control" >
-               <p>New to the app? <a href="#signup-page" class="signup-page-signup-link">Sign Up!</a></p>
+ <hr>
+        
+          <div class="sign-up-form-control">
+                <p class="sign-up-text">Dont have an account?</p>
+    <a href="#signup-page"  style="text-decoration:underline;">Sign up! </a>
             </div>
 
+           <div class="flex-stretch"></div>
+
+          <!--   <div class="sign-up-form-control" >
+               <p>New to the app? <a href="#signup-page" class="signup-page-signup-link">Sign Up!</a></p>
+            </div> -->
+
          </form>
+
            <div class="flex-stretch"></div>
       </div>
 
    </section>
 
+<!---------------SIGN-UP-PAGE---------------------------------------->
    <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch"></div>
-         <form id="signup-form" class="form" data-ajax="false">
+         <div class="flex-stretch"></div><form class="form" id="user-edit-form">
+ <!-- <form id="signup-form" class="form" data-ajax="false">
+<div class="form-control"> 
+   <label for="user-name" class="form-label">First name</label><br>
+   <input type="text" id="lirst-name" data-role="none"  class="form-input"  name="fname" value="Yoel"><br>
+    </div> 
+
+<div class="form-control"> 
+   <label for="user-name" class="form-label">Last name</label><br>
+   <input type="text" id="last-name" data-role="none"  class="form-input"  name="lname" value="Dirar"><br>
+       </div> 
+
+<div class="form-control"> 
+ <label for="user-name" class="form-label">User name </label><br>
+   <input type="text" id="user-name" data-role="none"  class="form-input"  name="Uname" value="shaquilleOatmeal"><br>
+       </div> 
+
+  <div class="form-control"> 
+    <label for="user-name" class="form-label">email </label><br>
+   <input type="text" id="user-name" data-role="none"  class="form-input"  name="email" value="yoeldirar@gmai.com"><br>
+         </div> 
+                   
+  
+</form> -->
+         <form id="signin-page" class="form" data-ajax="false">
             <div class="form-control">
-               <label for="signup-username" class="form-label">Username</label>
+               <!-- <label for="signup-username" class="form-label">Username</label> -->
                <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
             </div>
             <div class="form-control">
-               <label for="signup-password" class="form-label">Password</label>
+             <!--   <label for="signup-password" class="form-label">Password</label> -->
                <input type="password" id="signup-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
             <div class="form-control">
-               <label for="signup-password2" class="form-label">Confirm Password</label>
+               <!-- <label for="signup-password2" class="form-label">Confirm Password</label> -->
                <input type="password" id="signup-password2" data-role="none" class="form-input" placeholder="Type your Password again">
             </div>
-            <!-- <input type="submit" data-role="none"> -->
+            
             <div class="form-control">
-               <!-- <button type="button" class="form-button">Submit</button> -->
-               <a href="#recent-page" class="sign-up-form-button">Sign Up</a>
+               <button type="button" class="form-button">Sign up </button>
+               <a href="#recent-page" class="sign-up-form-button"></a>
             </div>
-            <div class="form-control" style="text-align:center;font-size:0.8em;">
-               <p>Already have an account? <a href="#signin-page">Sign In!</a></p>
+            
+             <div class="sign-up-form-control">
+                <p class="sign-up-text">Already have an account?</p>
+    <a href="#signin-page"  style="text-decoration:underline;">Sign In! </a>
             </div>
-         </form>
-         <div class="flex-stretch"></div>
+            <div class="flex-stretch"></div>
       </div>
    </section>
+ 
 
-
-
+<!---------------RECENT-PAGE---------------------------------------->
 <section data-role="page" id="recent-page">
    <div data-role="main" class="map-placeholder">
       <div class="recent-search">
@@ -123,7 +157,7 @@
          </div>
       </div>
    </section>
-
+<!---------------ANIMAL-LIST-PAGE---------------------------------------->
 
       <div class="modal" id="list-add-animal-modal">
          <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
@@ -145,7 +179,7 @@
                   <label for="#list-add-animal-description" class="form-label">Location</label>
                   <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
                </div>
-               
+               d
                <div class="form-control">
                   <label for="#list-add-animal-description" class="form-label">Description</label>
                   <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
@@ -290,41 +324,35 @@
       </header>
       <div data-role="main" class="display-flex flex-column">
      
-       <h1 class="text-center"> PROFILE</h1>
      
    <div data-role="main" class ="overscroll">
-        <div class="flex-stretch"></div>
+    
          <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" style="text-align:center";> 
-     
+        <h1 class="text-center"> PROFILE</h1>
 
 <form class="form" id="user-edit-form">
- <div class="form-control"> 
-             <label for="user-name" class="form-label">Username</label>
-                        <input type="text" id="user-name" data-role="none" class="form-input"
-                        placeholder=>
-                    </div>
-                    <div class="form-control"> 
-                        <label for="user-email" class="form-label">Email</label>
-                        <input type="email" id="user-email" data-role="none" class="form-input"
-                        placeholder="">
-                    </div>
-                    <div class="form-control"> 
-                        <label for="user-birth" class="form-label">Date of Birth</label>
-                        <input type="date" id="user-birth" data-role="none" class="form-input">
-                    </div>    
-                       <div class="form-control">
-                        <label for="user-password" class="form-label">Password</label>
-                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
-                    </div> 
-                    <div class="form-control">
-                        <label for="user-password" class="form-label">Confirm Password</label>
-                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
-                    </div> 
-                    
-              
-               </div>
+
+<div class="form-control"> 
+   <label for="user-name" class="form-label">First name</label><br>
+   <input type="text" id="lirst-name" data-role="none"  class="form-input"  name="fname" value="Yoel"><br>
+    </div> 
+
+<div class="form-control"> 
+   <label for="user-name" class="form-label">Last name</label><br>
+   <input type="text" id="last-name" data-role="none"  class="form-input"  name="lname" value="Dirar"><br>
+       </div> 
+
+<div class="form-control"> 
+ <label for="user-name" class="form-label">User name </label><br>
+   <input type="text" id="user-name" data-role="none"  class="form-input"  name="Uname" value="shaquilleOatmeal"><br>
+       </div> 
+
+  <div class="form-control"> 
+    <label for="user-name" class="form-label">email </label><br>
+   <input type="text" id="user-name" data-role="none"  class="form-input"  name="email" value="yoeldirar@gmai.com"><br>
+         </div> 
+                   
   
-  </div>
 </form>
 </div>
 
@@ -355,15 +383,7 @@
       <input type= "file"  name="" data-role="none" class="form-input-img"; accept="image/*">
      <h2 class="text-center">EDIT PICTURE</h2>
      
-<!-- 
-      <input type="text" name="" data-role="none" class="form-input"placeholder="User Name">
-    
-      <input type ="email" name="" data-role="none" class="form-input" placeholder="Email ID">
-      <input type="text" name="" data-role="none" class="form-input" placeholder="PHONE NUMBER">
-      <input type="text" name=""  data-role="none" class="form-input"placeholder="Date of Birth">
-      <input type="text" name=""  data-role="none" class="form-input"placeholder="GENDER">
-   -->
- 
+
     
 
 <form class="form" id="user-edit-form">
