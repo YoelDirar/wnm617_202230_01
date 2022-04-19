@@ -1,3 +1,7 @@
+https://json-generator.com/#
+
+
+
 /// USER TEMPLAGE//
 [
   '{{repeat(10)}}',
@@ -44,23 +48,7 @@
  ]
 
 // LOCATION TEMPLATE//
-[
-  '{{repeat(250)}}',
-  {
-   id: '{{index(1)}}',
-    animal_id: '{{integer(1, 50)}}',
 
-    lat:'{{floating(  37.961165,  37.700448)}}', 
-    lng: '{{floating( -122.385785, -121.594612)}}',
-  
-  description: '{{lorem(3, "sentences")}}',
-    
-    img: 'https://via.placeholder.com/400/',
-    icon: 'https://via.placeholder.com/400/?text=ICON',
-    date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
- 
- }
- ]
 
 /// ORIGINAL TEMPLAGE//
 [

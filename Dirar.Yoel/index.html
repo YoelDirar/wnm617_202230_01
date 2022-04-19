@@ -14,9 +14,12 @@
 <link rel="stylesheet" href="https://use.typekit.net/fyn6kac.css">
 <link rel="stylesheet" href="https://use.typekit.net/fyn6kac.css">
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
    <script src="js/app.js"></script>
    <script src="js/signin.js"></script>
+   <script src ="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+     <script src="js/parts.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 <body>
@@ -121,11 +124,16 @@
 <section data-role="page" id="recent-page">
    <div data-role="main" class="map-placeholder">
       <div class="recent-search">
-            <form class="hotdog" data-ajax="false" id="recent-search">
-               <input type="search" data-role="none" placeholder="Search">
+               <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
+               <input type="search"  class= "hotdog-recent" data-role="none" placeholder="Search" style= 
+               "width: 80%;
+               padding-top: 1.2;
+               padding: 0.6em;
+               border-radius: 25px;">
+               
             </form>
 
-                <div class="flex-none" style="line-height:3rem; padding:8 0.5em; position: absolute ;top:5vh;right:8vw">
+                <div class="flex-none" style="line-height:3rem; padding:8 0.5em; position: absolute ;top: 2vh;right:8vw">
                    <i class= "fa-solid fa-filter"></i> 
                 </div>
        </div>
@@ -157,44 +165,10 @@
          </div>
       </div>
    </section>
-<!---------------ANIMAL-LIST-PAGE---------------------------------------->
 
-      <div class="modal" id="list-add-animal-modal">
-         <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
-         <div class="modal-popup">
-            <div class="modal-head">
-               <h1 class=" text-center">ADD A Squirrel</h1>
-            </div>
-            <form class="modal-body overscroll" data-ajax="false">
-               <div class="form-control">
-                  <label for="#list-add-animal-name" class="form-label">Name</label>
-                  <input type="text" class="form-input" placeholder="Type a Name" data-role="none" id="list-add-animal-name">
-               </div>
-               <div class="form-control">
-                  <label for="#list-add-animal-type" class="form-label">Type</label>
-                  <input type="text" class="form-input" placeholder="Type a Type" data-role="none" id="list-add-animal-type">
-               </div>
-              
-              <div class="form-control">
-                  <label for="#list-add-animal-description" class="form-label">Location</label>
-                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
-               </div>
-               d
-               <div class="form-control">
-                  <label for="#list-add-animal-description" class="form-label">Description</label>
-                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
-               </div>
-              
+<!---------------LIST-PAGE---------------------------------------->
 
-               
-            </form>
-            <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">
-            <button type="submit" class="module-button" data-role="none">Submit</button>
-            </div>
-         </div>
-      </div>
-   </section>
- <section data-role="page" id="list-page">
+<section data-role="page" id="list-page">
       <header data-role="header">
          <h1>Squirrel List</h1>
          <ul>
@@ -202,166 +176,85 @@
          </ul>
       </header>
       <div data-role="main">
-         <!-- ul>li*10>a[href=#animal-profile-page]>{Animal $} -->
-         <ul class="animal-list">
-
-   <div data-role="main" class ="overscroll">
-            <!-- li.animal-list-item*10>a[href=#animal-profile-page]>(div.animal-list-image>img[src='https://via.placeholder.com/400x400/?text=Animal$'])+div.animal-list-body>(div.animal-list-name>{Animal $})+(div.animal-list-type>{Type})+(div.animal-list-breed>{Breed}) -->
-            <li class="animal-list-item">
-               <a href="#Shocks-profile-page">
-                  <div class="animal-list-image"> <img src="imgs/shocks.jpg" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Shocks</div>
-                     <br>
-                     <div class="animal-list-type">Western gray squirrel  </div>
-                     <br>
-                     
-                      <div class="animal-list-type">Davie Tennis Stadium </div>
-                  </div>
-               </a>
-            </li>
-            <li class="animal-list-item">
-
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="imgs/Wings.jpg" alt="Wings"></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Wings</div>
-                     <br>
-                     <div class="animal-list-type">Red squirrel</div>
-                     <br>
-                     <div class="animal-list-type">Rockridge-Temescal Greenbelt </div>
-                  </div>
-               </a>
-            </li>
-
-
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="imgs/Smiily .jpg" alt="Smiley"></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Smiley </div>
-                           <br>        
-                     <div class="animal-list-type">Western gray squirrel  </div>
-                 
-                  <br>
-                    <div class="animal-list-type">Joaquin Miller Park </div>
-                  </div>
-               </a>
-            </li>
-
-
-            <li class="animal-list-item">
-               <a href="#animal-profile-page">
-                  <div class="animal-list-image"><img src="imgs/Chewy.jpg" alt=""></div>
-                  <div class="animal-list-body">
-                     <div class="animal-list-name">Chewy </div>
-                                <br>
-                     <div class="animal-list-type">Western gray squirrel  </div>
-                  
-                  <br>
-                  <div class="animal-list-location">Diamond Park</div>
-                  </div>
-               </a>
-            </li>
-        
-        
-      
-            
-         </ul>
+         <ul class="animal-list"></ul>
 
          <div class="floater bottom right circle-button" data-activate="#list-add-animal-modal">&plus;</div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
-      <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal"></div>
-      
- 
+   
+
+<!---------------ADD-ANIMAL-LIST-PAGE---------------------------------------->
+
+     <div class="modal" id="list-add-animal-modal">
+         <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
+         <div class="modal-popup">
+            <div class="modal-head">Add Animal</div>
+            <form class="modal-body overscroll" data-ajax="false">
+               <div class="form-control">
+                  <label for="#list-add-animal-name" class="form-label">name</label>
+                  <input type="text" class="form-input" placeholder="Type a Name" data-role="none" id="list-add-animal-name">
+               </div>
+             
+               <div class="form-control">
+                  <label for="#list-add-animal-breed" class="form-label">breed</label>
+                  <input type="text" class="form-input" placeholder="Type a Breed" data-role="none" id="list-add-animal-breed">
+               </div>
+               <div class="form-control">
+                  <label for="#list-add-animal-description" class="form-label">description</label>
+                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
+               </div>
+               <!-- <p>Nostrum quos delectus blanditiis aperiam! Fuga excepturi, quibusdam, asperiores quis culpa vel ipsum, voluptatem quas officiis a rem nesciunt voluptatum accusamus deserunt consequuntur similique delectus dicta, quod odio. Laboriosam incidunt exercitationem ipsa necessitatibus enim neque. Quisquam totam rerum quia, nobis deleniti quae, delectus hic. Consectetur laudantium quis sunt aperiam hic quidem, velit dolores praesentium sapiente. Non, architecto, quas. Eaque, modi.</p>
+               <div class="display-flex">
+                  <div class="flex-stretch"></div>
+                  <div class="flex-none"><button class="form-button">click</button></div>
+               </div> -->
+            </form>
+            <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">
+               Submit
+            </div>
+         </div>
+      </div>
    </section>
+
+ 
 
  
 <!---------------Animal  PROFILE PAGE---------------------------------------->
 
-   <section data-role="page" id="Shocks-profile-page">
+  <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Squirrel Profile </h1>
+         <h1></h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#user-edit-page">Edit</a></li>
          </ul>
       </header>
-         <div class="animal-list-item">
-              
-                  <div class="animal-profile-image"> <img class ="animal-edit-image" src="imgs/shocks.jpg" alt=""></div>
-        
-    <input type= "file"  name="" data-role="none" class="form-input-img"; accept="image/*">
-     
       <div data-role="main">
-        <form class="form-label"  data-ajax="false">
-               <div class="form-control">
-                  <label for="#list-add-animal-name" class="form-label">Name</label>
-                  <input type="text" class="form-input" placeholder="Type a Name" data-role="none" id="list-add-animal-name">
-               </div>
-               <div class="form-control">
-                  <label for="#list-add-animal-type" class="form-label">Type</label>
-                  <input type="text" class="form-input" placeholder="Type a Type" data-role="none" id="list-add-animal-type">
-               </div>
-              
-               <div class="form-control">
-                  <label for="#list-add-animal-description" class="form-label">Description</label>
-                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
-               </div>
-              
-            </form>
-         <a href="#animal-edit-page">Edit</a>
+         <div class="animal-profile-top">
+         </div>
+         <div class="animal-profile-nav">
+            <div class="active">Map</div>
+            <div>Description</div>
+         </div>
+         <div class="animal-profile-bottom">
+            <div class="animal-profile-map active">
+               <div class="map map-placeholder"></div>
+            </div>
+            <div class="animal-profile-description"></div>
+         </div>
       </div>
    </section>
 <!---------------USER PROFILE PAGE---------------------------------------->
    <section data-role="page" id="user-profile-page">
-      <header data-role="header">
-         <ul>
-            <li><a href="#user-edit-page">Edit  profile </a>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-logout">Logout</a>
-         </ul>
-      </header>
-      <div data-role="main" class="display-flex flex-column">
-     
-     
-   <div data-role="main" class ="overscroll">
-    
-         <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" style="text-align:center";> 
-        <h1 class="text-center"> PROFILE</h1>
-
-<form class="form" id="user-edit-form">
-
-<div class="form-control"> 
-   <label for="user-name" class="form-label">First name</label><br>
-   <input type="text" id="lirst-name" data-role="none"  class="form-input"  name="fname" value="Yoel"><br>
-    </div> 
-
-<div class="form-control"> 
-   <label for="user-name" class="form-label">Last name</label><br>
-   <input type="text" id="last-name" data-role="none"  class="form-input"  name="lname" value="Dirar"><br>
-       </div> 
-
-<div class="form-control"> 
- <label for="user-name" class="form-label">User name </label><br>
-   <input type="text" id="user-name" data-role="none"  class="form-input"  name="Uname" value="shaquilleOatmeal"><br>
-       </div> 
-
-  <div class="form-control"> 
-    <label for="user-name" class="form-label">email </label><br>
-   <input type="text" id="user-name" data-role="none"  class="form-input"  name="email" value="yoeldirar@gmai.com"><br>
-         </div> 
-                   
-  
-</form>
-</div>
+      <div data-role="main"></div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+   </section>
 
             
       
              
-<footer data-role="footer" data-template="#footer-template"></footer>
-
-    </section>
+  
 
 <!---------------EDIT USER-PROFILE PAGE---------------------------------------->
 
@@ -372,7 +265,9 @@
    </header> -->
    <header data-role="header">
          <a href="#" data-rel="back"><i class="fa-solid fa-xl fa-chevron-left" style="padding-left:1.5em; padding-top:1.5em";></i></a>
-       
+        <div data-role="main">
+         <a href="#" class="js-logout">Logout</a>
+      </div>
       </header>
   <h1 class="text-center">EDIT PROFILE</h1>
    

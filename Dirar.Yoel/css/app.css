@@ -167,9 +167,6 @@ hr{
    border-radius: 2em;
    line-height: 3rem;
    padding: 0 2em;
-   margin-top:2em;
-   width: 75%;
-   margin-left: 39px;
 }
 .hotdog input {
    border-width: 0;
@@ -182,10 +179,18 @@ hr{
    color: inherit;
    outline: 0;
 }
+
+hotdog-recent{
+  
+
+    width: 80%;
+    padding-top: 1.2;
+    padding: 0.6em;
+    border-radius: 25px;
+}
 .hotdog.dark {
    background-color: var(--color-neutral-dark);
    color: white;
-    box-shadow: 10px 10px 8px #888888;
 }
 
 /*      p,
@@ -199,9 +204,19 @@ font-size: 1.5em ;
 
 #signin-form,
 #signup-form {
-   padding: 0em;
+   padding: 1em;
+}
+#recent-search {
+   box-shadow: 0.1em 0.2em 0.4em rgba(0,0,0,0.3);
 }
 
+
+
+
+.recent-search {
+   margin: 1em;
+   display: flex;
+}
 
 
 
@@ -493,6 +508,48 @@ font-size: 1.5em ;
    box-shadow: 0.1em 0.2em 0.4em rgba(0,0,0,0.2);
 }
 
+#animal-profile-page [data-role="main"] {
+   display: flex;
+   flex-direction: column;
+}
+#animal-profile-page header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+}
+.animal-profile-top {
+    height: 40vh;
+}
+.animal-profile-bottom {
+   flex: 1 1 auto;
+   position: relative;
+}
+.animal-profile-nav {
+   height: var(--header-height);
+   line-height: var(--header-height);
+   display: flex;
+}
+.animal-profile-nav div {
+   text-align: center;
+   flex: 1 1 auto;
+}
+.animal-profile-bottom>div {
+   opacity: 0;
+   pointer-events: none;
+   transition: all 0.3s;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.animal-profile-bottom div.active {
+   opacity: 1;
+}
+
 
 
 
@@ -504,6 +561,10 @@ font-size: 1.5em ;
 
 
 /* Animal List */
+#animal-profile-page [data-role ="main"]{
+   display: flex;
+   flex-direction: column;
+}
 .animal-list {
    list-style-type: none;
    padding: 0;
@@ -533,31 +594,8 @@ font-size: 1.5em ;
    margin-top: .5em;
    /* margin-left: 7.5em; */
 }
-.animal-profile-image{
-  
-   vertical-align: text-bottom;
-   border-radius:1.5em;
-   margin-top: .5em;
-   /* margin-left: 7.5em; */
-       width: 300px;
-    margin-left: 37px;
-}
 
-.animal-edit-image{
-       width: 7.5em;
-    height: 5.5em;
-    vertical-align: text-bottom;
-    border-radius: 1.5em;
-    margin-top: 0.5em;
-    width: 300px;
-    height: 200px;
-}
-.animal-list-body {
-   padding: 1em;
-}
-.animal-list-name {
-   font-size: 1.3em;
-}
+
 
 /* foote nav */
 .nav-icon-set li.active {
