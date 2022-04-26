@@ -42,7 +42,15 @@ $(() => {
          throw("No id detected");
       }
    })
-
+     .on("click", ".animal-profile-nav>div", function(e) {
+      let id = $(this).index();
+      $(this).parent()
+         .next().children().eq(id)
+         .addClass("active")
+         .siblings().removeClass("active")
+      $(this).addClass("active")
+         .siblings().removeClass("active")
+   })
 
    // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {

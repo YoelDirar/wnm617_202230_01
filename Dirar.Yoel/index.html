@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +22,21 @@
    <script src ="js/functions.js"></script>
    <script src="js/pages.js"></script>
      <script src="js/parts.js"></script>
+         <script src="js/maps.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
+
+
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQEsT0z3N1dAjgy6BR0bYITfkEXIQOQ_E"
+      defer
+    ></script>
 </head>
 <body>
 <!---------------SIGN-IN-PAGE---------------------------------------->
-    <section data-role="page" id="signin-page">
+       <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
-      
-        <div class="text-center" style="text-align: center">
+         <div class="flex-stretch"></div>
           <img src="imgs/logo2.png"  class="hero-image" alt="hero">
              <h1 class = "hero-title">Secret Squirrel's</h1>
          </div>
@@ -121,33 +130,23 @@
  
 
 <!---------------RECENT-PAGE---------------------------------------->
-<section data-role="page" id="recent-page">
-   <div data-role="main" class="map-placeholder">
-      <div class="recent-search">
-               <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
-               <input type="search"  class= "hotdog-recent" data-role="none" placeholder="Search" style= 
-               "width: 80%;
-               padding-top: 1.2;
-               padding: 0.6em;
-               border-radius: 25px;">
-               
-            </form>
 
-                <div class="flex-none" style="line-height:3rem; padding:8 0.5em; position: absolute ;top: 2vh;right:8vw">
-                   <i class= "fa-solid fa-filter"></i> 
-                </div>
-       </div>
-
-         <div class="marker" style="position:absolute;top:50vh;left:20vw" data-activate="#map-drawer">
-            <i class= "fa-solid  fa-2x fa-map-pin"></i>
-
-         </div>
-
-   </div>
-
- <footer data-role="footer" data-template="#footer-template"></footer>
-
-
+   <section data-role="page" id="recent-page">
+      <div data-role="main">
+         <div class="map"></div>
+         <div class="recent-search">
+            <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
+                <input type="search"  class= "hotdog-recent" data-role="none" placeholder="Search" style= 
+                     "width: 80%;
+                     padding-top: 1.2;
+                     padding: 0.6em;
+                   border-radius: 25px;">
+          </div>
+          </form>
+         
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+<!-- 
       <div class="modal" id="map-drawer">
          <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
          <div class="modal-drawer left">
@@ -160,10 +159,10 @@
                
             </div>
             <div class="modal-body">
-              
+               content!
             </div>
          </div>
-      </div>
+      </div> -->
    </section>
 
 <!---------------LIST-PAGE---------------------------------------->
@@ -241,16 +240,15 @@
             <div class="animal-profile-map active">
                <div class="map map-placeholder"></div>
             </div>
-            <div class="animal-profile-description"></div>
+            <div class="animal-profile-description" style="margin-left: 30px";></div>
          </div>
       </div>
    </section>
-<!---------------USER PROFILE PAGE---------------------------------------->
-   <section data-role="page" id="user-profile-page">
+<!---------------Animal  PROFILE PAGE---------------------------------------->
+ <section data-role="page" id="user-profile-page">
       <div data-role="main"></div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
-
             
       
              
@@ -260,56 +258,19 @@
 
 
 <section data-role="page" id="user-edit-page">
-   <!-- <header class="display-flex  flex-justify-between header" data-role="none">
-      <a href="#" data-rel="back"><i class="fa-solid fa-xl fa-chevron-left" style="padding-left:1.5em; padding-top:1.5em";></i></a>
-   </header> -->
+   
    <header data-role="header">
          <a href="#" data-rel="back"><i class="fa-solid fa-xl fa-chevron-left" style="padding-left:1.5em; padding-top:1.5em";></i></a>
         <div data-role="main">
-         <a href="#" class="js-logout">Logout</a>
+        
       </div>
       </header>
-  <h1 class="text-center">EDIT PROFILE</h1>
-   
-   <div data-role="main" class ="overscroll">
- <div class="flex-stretch"></div>
  
-      <img src="https://www.fillmurray.com/340/260" alt="a picture of Yoel  smiling" class="profile-img" style="text-align:center";> 
-      <input type= "file"  name="" data-role="none" class="form-input-img"; accept="image/*">
-     <h2 class="text-center">EDIT PICTURE</h2>
+ 
      
 
-    
 
-<form class="form" id="user-edit-form">
- <div class="form-control"> 
-             <label for="user-name" class="form-label">Username</label>
-                        <input type="text" id="user-name" data-role="none" class="form-input"
-                        placeholder=>
-                    </div>
-                    <div class="form-control"> 
-                        <label for="user-email" class="form-label">Email</label>
-                        <input type="email" id="user-email" data-role="none" class="form-input"
-                        placeholder="">
-                    </div>
-                    <div class="form-control"> 
-                        <label for="user-birth" class="form-label">Date of Birth</label>
-                        <input type="date" id="user-birth" data-role="none" class="form-input">
-                    </div>    
-                       <div class="form-control">
-                        <label for="user-password" class="form-label">Password</label>
-                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
-                    </div> 
-                    <div class="form-control">
-                        <label for="user-password" class="form-label">Confirm Password</label>
-                        <input type="password" id="user-password" data-role="none" class="form-input" placeholder="******">
-                    </div> 
-                     <a href="#recent-page" class="form-button" style= "float: left">Save</a>
-                    </div>
-              
-               </div>
-  
-  </div>
+        <a href="#" class="js-logout" style= "float: left">Log out</a>     
 </form>
 </div>
    <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">

@@ -25,3 +25,9 @@ const makeUserProfilePage = o => `
    <a href="#user-edit-page">Edit</a>
 </div>
 `;
+
+
+const makeAnimalProfileDescription = o => `
+<h2>${o.name}</h2>
+<div>${o.bread}</div>
+`;
