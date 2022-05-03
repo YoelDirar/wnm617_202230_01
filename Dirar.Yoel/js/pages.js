@@ -60,4 +60,24 @@ const AnimalProfilePage = async() => {
       params:[sessionStorage.animalId]
    })
    console.log(locations)
+     let map_el = await makeMap("#animal-profile-page .map");
+   makeMarkers(map_el,locations)
+}
+const AnimalEditPage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
+}
+const AnimalAddPage = async() => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
 }

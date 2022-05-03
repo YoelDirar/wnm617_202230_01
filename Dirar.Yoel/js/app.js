@@ -26,6 +26,11 @@ $(() => {
       checkLoginForm();
    })
 
+    // FORM SUBMISSION CLICKS
+   .on("click", ".js-submit-animal-add", function() {
+      submitAnimalAdd();
+   })
+
 
    // CLICKS
    .on("click", ".js-logout", function() {

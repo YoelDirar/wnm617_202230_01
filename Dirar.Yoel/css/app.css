@@ -23,7 +23,7 @@ font-style: normal;*/
 
 body {
    margin: 0;
-   font-size: 100%;
+   font-size: 80%;
    font-family: var(--font-serif);
    background-color: var(--color-neutral-medium);
 }
@@ -81,23 +81,19 @@ margin-bottom:20vmin
 .sign-up-form-button{
 color:  var(--color-neutral-lighter);
 }
+
+
 /* Forms */
 
 .form-control {
    margin: 1em 0;
-   width: 100%;
-   
-   align-items: center;
-   padding: 0em;
 }
 .ui-mobile .form-label {
    font-size: 0.8em;
-   /* color: var(--color-neutral-medium); */
+   color: var(--color-neutral-medium);
    margin: 0.5rem 0;
 }
 .form-input {
-    
-   font-size:1em;
    display: inline-block;
    width: 100%;
    border-width: 0;
@@ -105,34 +101,42 @@ color:  var(--color-neutral-lighter);
    font: inherit;
    padding: 0.5em 1em;
    margin: 0;
-   outline: 1px;
-   border-radius: 12px;
-   height: 3rem;
-
-
-
-}
-.form-label{
-padding-left: ;
+   outline: 0;
 }
 .form-button {
-    display: inline-block;
-    border-radius: 25px;
-    width: 100%;
-    border:  none;
-    background-color: var(--color-main-light);
-    font: inherit;
-    padding: 0.5em 1em;
-    margin: 0;
-    outline: 0;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 2px 5px 5px 0px  var(--color-neutral-dark);
- }
-.sign-up-text{
-   /* margin-left: -13em; */
-   margin-top: 0;
+   display: inline-block;
+   width: 100%;
+   border-width: 0;
+   background-color: var(--color-neutral-light);
+   font: inherit;
+   padding: 0.5em 1em;
+   margin: 0;
+   outline: 0;
+   text-align: center;
+   text-decoration: none;
 }
+.hotdog {
+   background-color: white;
+   border-radius: 2em;
+   line-height: 3rem;
+   padding: 0 2em;
+}
+.hotdog input {
+   border-width: 0;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   flex: 1 1 auto;
+   display: block;
+   font: inherit;
+   color: inherit;
+   outline: 0;
+}
+.hotdog.dark {
+   background-color: var(--color-neutral-dark);
+   color: white;
+}
+
 
 hr{
    margin-top: 27px;
@@ -526,6 +530,9 @@ font-size: 1.5em ;
    height: 2rem;
    vertical-align: middle;
 }
+
+
+
 #animal-profile-page [data-role="main"] {
    display: flex;
    flex-direction: column;
@@ -534,14 +541,9 @@ font-size: 1.5em ;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 2;
     width: 100%;
     background-color: rgba(255,255,255,0.1);
-}
-.animal-profile-nav{
-   height:var(--header-height);
-   line-height: var(--header-height);
-   display:  flex;
 }
 .animal-profile-top {
     height: 40vh;
@@ -583,7 +585,6 @@ font-size: 1.5em ;
 
 
 
-
 /* Animal List */
 .animal-list {
    list-style-type: none;
@@ -607,15 +608,15 @@ font-size: 1.5em ;
    text-decoration: none;
 }
 .animal-list-image img {
-   width: 7.5em;
-   height: 5.5em;
+   width: 6em;
    vertical-align: text-bottom;
-   border-radius:1.5em;
-   margin-top: .5em;
-   /* margin-left: 7.5em; */
 }
-
-
+.animal-list-body {
+   padding: 1em;
+}
+.animal-list-name {
+   font-size: 1.3em;
+}
 
 /* foote nav */
 .nav-icon-set li.active {
@@ -638,10 +639,7 @@ font-size: 1.5em ;
 
 
 
-.map-placeholder {
-   background-image: url(../imgs/fakemap.jpg);
-   background-position: center;
-   background-size: cover;
+Background-size: cover;
 }
 .icon {
    width: 50rem;
