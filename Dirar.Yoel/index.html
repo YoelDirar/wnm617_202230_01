@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +51,7 @@
 <!---------------SIGN-IN-PAGE---------------------------------------->
        <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch"></div>
+         
           <img src="imgs/logo2.png"  class="hero-image" alt="hero">
              <h1 class = "hero-title">Secret Squirrel's</h1>
          </div>
@@ -106,23 +103,21 @@
 <!---------------SIGN-UP-PAGE---------------------------------------->
    <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch"></div><form class="form" id="user-edit-form">
+         <div class="flex-stretch"></div>
+         <form class="form" id="user-edit-form">
  <!-- <form id="signup-form" class="form" data-ajax="false">
 <div class="form-control"> 
    <label for="user-name" class="form-label">First name</label><br>
    <input type="text" id="lirst-name" data-role="none"  class="form-input"  name="fname" value="Yoel"><br>
     </div> 
-
 <div class="form-control"> 
    <label for="user-name" class="form-label">Last name</label><br>
    <input type="text" id="last-name" data-role="none"  class="form-input"  name="lname" value="Dirar"><br>
        </div> 
-
 <div class="form-control"> 
  <label for="user-name" class="form-label">User name </label><br>
    <input type="text" id="user-name" data-role="none"  class="form-input"  name="Uname" value="shaquilleOatmeal"><br>
        </div> 
-
   <div class="form-control"> 
     <label for="user-name" class="form-label">email </label><br>
    <input type="text" id="user-name" data-role="none"  class="form-input"  name="email" value="yoeldirar@gmai.com"><br>
@@ -186,28 +181,26 @@
           </form>
          
       </div>
+         <a href="#choose-animal-page" class="floater bottom right circle-button" >+</a>
       <footer data-role="footer" data-template="#footer-template"></footer>
-<!-- 
+
       <div class="modal" id="map-drawer">
          <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
-         <div class="modal-drawer left">
-            <div class="modal-head display-flex">
-               <div class="flex-none">sidebar</div>
-               <div class="flex-stretch"></div>
-               <div class="flex-none">
-                  <a href="#" data-deactivate="#map-drawer">&times;</a>
-               </div>
-               
-            </div>
-            <div class="modal-body">
-               content!
-            </div>
+         <div class="modal-drawer top">
+         <div class="modal-body"></div>
          </div>
-      </div> -->
+      </div>
    </section>
 
 
-<section data-role="page" id="list-page">
+
+
+
+
+
+
+   
+  <section data-role="page" id="list-page">
       <header data-role="header">
          <h1>Animal List</h1>
          <ul>
@@ -244,7 +237,7 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#user-edit-page">Edit</a></li>
+            <li><a href="#animal-edit-page">Edit</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -257,6 +250,7 @@
          <div class="animal-profile-bottom">
             <div class="animal-profile-map active">
                <div class="map map-placeholder"></div>
+                   <a href="#choose-location-page" class="floater bottom right circle-button" >+</a>
             </div>
             <div class="animal-profile-description" style="margin-left: 30px";></div>
          </div>
@@ -286,8 +280,8 @@
          </ul>
       </header>
       <div data-role="main">
-         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
-      </div>
+         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form> 
+         </div>
    </section>
 
 
@@ -298,7 +292,7 @@
 
 
 
-  <section data-role="page" id="animal-edit-page">
+ <section data-role="page" id="animal-edit-page">
       <header data-role="header">
          <h1>Edit Animal</h1>
          <ul>
@@ -308,10 +302,10 @@
          </ul>
       </header>
       <div data-role="main">
-         <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
-         </form>
+         <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em"> </form>
       </div>
    </section>
+
 
 
 
@@ -327,7 +321,7 @@
 
 <section data-role="page" id="choose-animal-page">
       <header data-role="header">
-         <h1>Choose Animal</h1>
+         <h1>Choose type of Squirrel </h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -338,7 +332,7 @@
          <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
       </div>
    </section>
-
+ 
    <section data-role="page" id="choose-location-page">
       <header data-role="header">
          <h1>Choose Location</h1>
@@ -355,7 +349,7 @@
 
    <section data-role="page" id="choose-description-page">
       <header data-role="header">
-         <h1>Describe The Animal</h1>
+         <h1>Describe The Squirrel</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -378,28 +372,6 @@
 
 
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
 
 <!---------------USER PROFILE PAGE---------------------------------------->
  <section data-role="page" id="user-profile-page">
@@ -418,6 +390,13 @@
       <div data-role="main"></div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
+
+
+
+
+
+
+
 
    <section data-role="page" id="user-settings-page">
       <header data-role="header">
@@ -458,7 +437,7 @@
          </ul>
       </header>
       <div data-role="main">
-         <form id="user-password-form" class="overscroll fill-parent display-flex flex-column" data-ajax="false" style="padding:1em">
+         <form id="user-password-form" class="overscroll" data-ajax="false" style="padding:1em">
             <div>
                <div class="form-control">
                   <label for="user-password-new" class="form-label">New Password</label>
@@ -514,10 +493,6 @@
    
 </body>
 </html>
-
-
-
-
 
 
 

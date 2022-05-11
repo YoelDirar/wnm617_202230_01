@@ -21,7 +21,6 @@ function fetchAll($r) {
 
 
 
-
 /*
 $c = connection
 $ps = prepared statement
@@ -98,6 +97,39 @@ function makeStatement($data) {
             ORDER BY l.animal_id, l.date_create DESC
          ", $p);
 
+
+
+
+      case "insert_user":
+         $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?", [ $p[0], $p[1] ]);
+         if(count($r['result']))
+            return ["error"=>"Username or Email already exists"];
+
+         makeQuery($c,"INSERT INTO
+            `track_users`
+            (`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_animal":
+         makeQuery($c,"INSERT INTO
+            `track_animals`
+            (`user_id`,`name`,`bread`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?,  ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_location":
+         makeQuery($c,"INSERT INTO
+            `track_locations`
+            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
 
        case "check_signin":
          return makeQuery($c, "SELECT id from `track_users` WHERE `username` = ? AND `password` = md5(?)", $p);

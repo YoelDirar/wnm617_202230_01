@@ -9,7 +9,7 @@ const makeAnimalList = templater(o=>`
       <div class="animal-list-body">
          <div class="animal-list-name">${o.name}</div>
      
-         <div class="animal-list-breed">Breed: ${o.bread}</div>
+         <div class="animal-list-bread">Breed: ${o.bread}</div>
       </div>
    </a>
 </li>
@@ -22,7 +22,7 @@ const makeUserProfilePage = o => `
 <div>
    <div><strong>Username</strong> @${o.username}</div>
    <div><strong>Email</strong> ${o.email}</div>
-   <a href="#user-settings-page">Edit</a>
+   <a href="#user-settings-page">Settings</a>
 </div>
 `;
 
@@ -46,7 +46,7 @@ const makeAnimalPopupBody = o => `
 
 
 
-const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {
+const FormControlInput = ({namespace,name,displayname,bread,placeholder,value=""}) => {
    return `<div class="form-control">
       <label class="form-label" for="#${namespace}-${name}">${displayname}</label>
       <input data-role="none" class="form-input" type="${bread}" placeholder="${placeholder}" id="${namespace}-${name}" value="${value}">
@@ -66,7 +66,6 @@ ${FormControlInput({
    namespace,
    name:"name",
    displayname:"Name",
-   bread:"text",
    placeholder:"Type a Name",
    value:animal.name,
 })}
@@ -75,12 +74,12 @@ ${FormControlInput({
    namespace,
    name:"breed",
    displayname:"Breed",
-   type:"text",
    placeholder:"Type a Breed",
    value:animal.bread,
 })}
 ${FormControlTextarea({
    namespace,
+   bread:"text",
    name:"description",
    displayname:"Description",
    placeholder:"Type a Description",
@@ -96,7 +95,7 @@ ${FormControlInput({
    namespace,
    name:"name",
    displayname:"Name",
-   type:"text",
+   bread:"text",
    placeholder:"Type a Name",
    value:user.name,
 })}

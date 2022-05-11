@@ -3,12 +3,13 @@
 const RecentPage = async() => {
 
 
-   let {result} = await query({
+   let {result,error} = await query({
       type:'recent_animal_locations',
       params:[sessionStorage.userId]
    });
    console.log(result);
 
+   if(error) throw error;
    let valid_animals = result.reduce((r,o)=>{
       o.icon = o.img;
       if(o.lat && o.lng) r.push(o);
@@ -17,8 +18,34 @@ const RecentPage = async() => {
 
    let map_el = await makeMap("#recent-page .map");
    makeMarkers(map_el,valid_animals)
-}
 
+   map_el.data("markers").forEach((m, i)=>{
+   	console.log(m)
+   	m.addListener("click",function(e){
+   		let animal =  valid_animals[i];
+
+   		console.log(animal[i])
+
+
+         // Just Navigate
+         // sessionStorage.animalId = animal.animal_id;
+         // $.mobile.navigate("#animal-profile-page");
+
+
+         // Open Google InfoWindow
+         // map_el.data("infoWindow")
+         //    .open(map_el.data("map"),m);
+         // map_el.data("infoWindow")
+         //    .setContent(makeAnimalPopupBody(animal));
+
+
+         $("#map-drawer")
+            .addClass("active")
+            .find(".modal-body")
+            .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
+      })
+   })
+}
 
 
 const ListPage = async() => {
@@ -43,7 +70,15 @@ const UserProfilePage = async() => {
 
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }
+const UserEditPage = async() => {
+    let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   })
+   let [user] = users;
 
+   $("#user-edit-form").html(makeUserForm(user, "user-edit"))
+}
 
 const AnimalProfilePage = async() => {
    let {result:animals} = await query({
@@ -70,7 +105,7 @@ const AnimalEditPage = async() => {
    })
    let [animal] = animals;
 
-   $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
+   $("#animal-edit-form").html(makeAnimalForm(animal, "animal-edit"))
 }
 const AnimalAddPage = async() => {
    let {result:animals} = await query({
@@ -81,3 +116,13 @@ const AnimalAddPage = async() => {
 
    $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
 }
+
+
+
+
+
+
+
+
+
+
