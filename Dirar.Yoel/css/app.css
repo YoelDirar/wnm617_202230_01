@@ -277,6 +277,10 @@ font-size: 1.5em ;
    width: 100%;
    height: 10%;
 }
+
+
+
+
 /*Profile page*/ 
 
 .text-center{
@@ -464,8 +468,8 @@ font-size: 1.5em ;
 /* floater */
 .floater { position: absolute; }
 .floater.top { top:1rem }
-.floater.right { right:1rem }
-.floater.bottom { bottom:4rem }
+.floater.right { right: 2rem;}
+.floater.bottom { bottom: 1rem;}
 .floater.left { left:1rem }
 
 
@@ -501,53 +505,40 @@ font-size: 1.5em ;
 }
 
 
-#animal-profile-page [data-role="main"] {
-   display: flex;
-   flex-direction: column;
-}
-#animal-profile-page header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  width: 100%;
-  background-color: rgba(255,255,255,0.1);
-}
-.animal-profile-nav{
-   height:var(--header-height);
-   line-height: var(--header-height);
-   display:  flex;
-}
-.animal-profile-top {
-  height: 40vh;
-  position: relative;
-}
-.animal-profile-bottom {
-   flex: 1 1 auto;
+
+
+/* User Profile */
+
+.user-profile-head {
    position: relative;
 }
-.animal-profile-nav {
-   height: var(--header-height);
-   line-height: var(--header-height);
-   display: flex;
+.user-profile-head>img {
+   width: 100%;
+   height: 40vh;
+   object-fit: cover;
+   object-position: center;
 }
-.animal-profile-nav div {
-   text-align: center;
-   flex: 1 1 auto;
+.user-profile-body {
+   padding: 1em;
 }
-.animal-profile-bottom>div {
-   opacity: 0;
-   pointer-events: none;
-   transition: all 0.3s;
+
+
+
+
+
+/* Image Picker */
+.imagepicker.replace {
    position: absolute;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
+   background-position: center;
+   background-size: contain;
+   background-repeat:  no-repeat;
 }
-.animal-profile-bottom div.active {
-   opacity: 1;
-   pointer-events: initial;
+.imagepicker.replace input {
+   display: none;
 }
 
 
@@ -670,7 +661,7 @@ font-size: 1.5em ;
    background-size: cover;
 }
 .icon {
-   width: 12rem;
+   width: 3rem;
    height: 2rem;
 }
 

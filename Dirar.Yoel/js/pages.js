@@ -77,15 +77,25 @@ const UserProfilePage = async() => {
    $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }
 const UserEditPage = async() => {
-    let {result:users} = await query({
+   let {result:users} = await query({
       type:'user_by_id',
       params:[sessionStorage.userId]
    })
    let [user] = users;
 
-   $("#user-edit-form").html(makeUserForm(user, "user-edit"))
+   $("#user-edit-form").html(makeUserForm(user,"user-edit"))
 }
+const UserEditPhotoPage = async () => {
+   let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   })
+   let [user] = users;
 
+   $("#user-edit-photo-page .imagepicker").css({
+      "background-image":`url(${user.img})`
+   })
+}
 
 
 
@@ -127,7 +137,6 @@ const AnimalEditPage = async() => {
 
    $("#animal-edit-form").html(makeAnimalForm(animal, "animal-edit"))
 }
-
 const AnimalAddPage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
