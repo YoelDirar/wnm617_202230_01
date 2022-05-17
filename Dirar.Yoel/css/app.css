@@ -495,8 +495,8 @@ font-size: 1.5em ;
    background-size: cover;
 }
 .icon {
-   width: 2rem;
-   height: 2rem;
+   width: 1rem;
+   height: 1rem;
    vertical-align: middle;
 }
 
@@ -520,6 +520,7 @@ font-size: 1.5em ;
 }
 .animal-profile-top {
   height: 40vh;
+  position: relative;
 }
 .animal-profile-bottom {
    flex: 1 1 auto;
@@ -582,12 +583,62 @@ font-size: 1.5em ;
    text-decoration: none;
 }
 .animal-list-image img {
-   width: 7.5em;
-   height: 5.5em;
+   width: 6em;
    vertical-align: text-bottom;
-   border-radius: -3.5em;
-   margin-top: .5em;
-   /* margin-left: 7.5em; */
+}
+.animal-list-body {
+   padding: 1em;
+}
+.animal-list-name {
+   font-size: 1.3em;
+}
+
+
+
+#animal-profile-page [data-role="main"] {
+   display: flex;
+   flex-direction: column;
+}
+#animal-profile-page header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(255,255,255,0.1);
+}
+.animal-profile-top {
+    height: 40vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.animal-profile-bottom {
+   flex: 1 1 auto;
+   position: relative;
+}
+.animal-profile-nav {
+   height: var(--header-height);
+   line-height: var(--header-height);
+   display: flex;
+}
+.animal-profile-nav div {
+   text-align: center;
+   flex: 1 1 auto;
+}
+.animal-profile-bottom>div {
+   opacity: 0;
+   pointer-events: none;
+   transition: all 0.3s;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.animal-profile-bottom div.active {
+   opacity: 1;
+   pointer-events: initial;
 }
 
 
@@ -619,8 +670,8 @@ font-size: 1.5em ;
    background-size: cover;
 }
 .icon {
-   width: 50rem;
-   height:50rem;
+   width: 12rem;
+   height: 2rem;
 }
 
 .footer-template{

@@ -11,20 +11,27 @@ $(() => {
      
    // PAGE ROUTING
          switch(ui.toPage[0].id){
-            case "recent-page" : RecentPage(); break;
-            case "list-page" : ListPage(); break;
-            case "user-profile-page" : UserProfilePage(); break;
-            case "user-edit-page": UserEditPage();break;
-            case "animal-profile-page" : AnimalProfilePage(); break;
-            case "animal-edit-page": AnimalEditPage();break
-            case "animal-add-page": AnimalAddPage();break 
+         case "recent-page": RecentPage(); break;
+         case "list-page": ListPage(); break;
+         
+         case "user-profile-page": UserProfilePage(); break;
+         case "user-edit-page": UserEditPage(); break;
+         case "user-edit-photo-page": UserEditPhotoPage(); break;
+         
+         case "animal-profile-page": AnimalProfilePage(); break;
+         case "animal-edit-page": AnimalEditPage(); break;
+         case "animal-add-page": AnimalAddPage(); break;
+         case "animal-edit-photo-page": AnimalEditPhotoPage(); break;
+
+         case "choose-location-page": ChooseLocationPage(); break;
+
             
          }
    })
 
 
 
-  // FORM SUBMISSIONS
+   // FORM SUBMISSIONS
    .on("submit", "#signin-form", function(e) {
       e.preventDefault();
       checkLoginForm();
@@ -33,6 +40,13 @@ $(() => {
       e.preventDefault();
       submitUserSignup();
    })
+
+   .on("submit", "#list-search-form", function(e) {
+      e.preventDefault();
+      let s = $(this).find("input").val();
+      checkSearchForm(s);
+   })
+
 
    // FORM SUBMISSION CLICKS
    .on("click", ".js-submit-animal-add", function() {
@@ -47,6 +61,7 @@ $(() => {
    .on("click", ".js-submit-location-add", function() {
       submitLocationAdd();
    })
+
 
 
    // CLICKS
@@ -64,6 +79,16 @@ $(() => {
          throw("No id detected");
       }
    })
+       .on("click",".js-animal-delete", function(e) {
+      submitDeleteAnimal();
+   })
+    .on("click",".js-location-choose-animal", function(e) {
+      $("#location-animal").val(sessionStorage.animalId)
+   })
+
+
+
+
      .on("click", ".animal-profile-nav>div", function(e) {
       let id = $(this).index();
       $(this).parent()
