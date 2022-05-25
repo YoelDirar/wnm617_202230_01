@@ -16,20 +16,37 @@ const makeAnimalList = templater(o=>`
 `);
 
 
+
 const makeUserProfilePage = o => `
+   
+
 <div class="user-profile-head">
-   <img src="${o.img}">
-   <a href="#user-edit-photo-page" class="floater left bottom"><img src="imgs/icons/pencil.svg" class="icon"></a>
+  <div class="profile-name" style="margin-top: 15px;">${o.name}</div>
+      <img src="${o.img}">
+      <a href="#user-edit-photo-page" class="floater left bottom"><img src="imgs/icons/pencil.svg" class="edit-icon"></a>
+      <p  class="edit-text"> Edit Photo</p>
 </div>
-<div class="user-profile-body">
-   <h2>${o.name}</h2>
-   <div class="user-profile-description">
-      <div><strong>Username</strong> @${o.username}</div>
-      <div><strong>Email</strong> ${o.email}</div>
-      <a href="#user-settings-page">Settings</a>
-   </div>
-</div>
+<hr>
+
+   <form class="user-page">
+            <p class="title-user">NAME</p>
+            <p class="user-info">${o.name}</p>
+
+            
+            <p class="title-user">USERNAME</p>
+            <p class="user-info">&commat;${o.username}</p>
+            
+            
+            <p class="title-user">EMAIL</p>
+            <p class="user-info">${o.email}</p>
+            <br>
+   </form>
+         
 `;
+
+
+
+
 
 
 const makeAnimalProfileDescription = o => `

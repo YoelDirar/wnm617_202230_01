@@ -63,8 +63,6 @@ const ListPage = async() => {
 
 
 
-
-
 const UserProfilePage = async() => {
    let {result:users} = await query({
       type:'user_by_id',
@@ -85,6 +83,9 @@ const UserEditPage = async() => {
 
    $("#user-edit-form").html(makeUserForm(user,"user-edit"))
 }
+
+
+
 const UserEditPhotoPage = async () => {
    let {result:users} = await query({
       type:'user_by_id',
@@ -99,20 +100,14 @@ const UserEditPhotoPage = async () => {
 
 
 
-
-
-
-
-
-
 const AnimalProfilePage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
    })
    let [animal] = animals;
-   $(".animal-profile-top").css({"background-image":`url(${animal.img})`})
-   $("#animal-profile-page h1").html(animal.name)
+      $(".animal-profile-top").css({"background-image":`url(${animal.img}) `})
+      
    $(".animal-profile-description").html(makeAnimalProfileDescription(animal));
 
    let {result:locations} = await query({
@@ -125,17 +120,15 @@ const AnimalProfilePage = async() => {
    makeMarkers(map_el,locations)
 }
 
-
-
-
 const AnimalEditPage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
+      
    })
    let [animal] = animals;
-
-   $("#animal-edit-form").html(makeAnimalForm(animal, "animal-edit"))
+       $(".animal-profile-img").css({"background-image":`url(${animal.img}) `})
+   $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
 }
 const AnimalAddPage = async() => {
    let {result:animals} = await query({
@@ -145,6 +138,17 @@ const AnimalAddPage = async() => {
    let [animal] = animals;
 
    $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
+}
+const AnimalEditPhotoPage = async () => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-edit-photo-page .imagepicker").css({
+      "background-image":`url(${animal.img})`
+   })
 }
 
 

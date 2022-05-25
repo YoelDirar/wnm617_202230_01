@@ -1,4 +1,3 @@
-
 // Promise
 const query = (options) => {
    return fetch('data/api.php',{

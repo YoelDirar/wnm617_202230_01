@@ -1,4 +1,7 @@
 
+
+
+
 const submitAnimalAdd = async () => {
    let name = $("#animal-add-name").val();
 
@@ -10,7 +13,7 @@ const submitAnimalAdd = async () => {
 
    if(name!=""  && bread!="" && description!="") {
       let {id,error} = await query({
-         type: 'insert_animal',
+       
          params: [sessionStorage.userId,name,bread,description]
       });
 
@@ -21,23 +24,38 @@ const submitAnimalAdd = async () => {
    } else {
       throw("Not all data present");
    }
-}
 
+}
 
 const submitAnimalEdit = async () => {
    let name = $("#animal-edit-name").val();
-   let bread = $("#animal-edit-bread").val();
+
+   let bread = $("#animal-edit-breed").val();
    let description = $("#animal-edit-description").val();
 
    let {result,error} = await query({
       type: 'update_animal',
-      params: [name,bread,description,sessionStorage.animalId]
+      params: [name, bread,description,sessionStorage.animalId]
    });
 
    if(error) throw(error);
 
    history.go(-1);
 }
+
+const submitDeleteAnimal = async () => {
+   let {result,error} = await query({
+      type: 'delete_animal',
+      params: [sessionStorage.animalId]
+   });
+
+   if(error) throw(error);
+   history.go(-1);
+}
+
+
+
+
 
 const submitUserSignup = async () => {
    let username = $("#signup-username").val();
@@ -64,34 +82,6 @@ const submitUserSignup = async () => {
 }
 
 
-const submitUserEdit = async () => {
-   let name = $("#user-edit-name").val();
-   let username = $("#user-edit-username").val();
-   let email = $("#user-edit-email").val();
-
-   console.log({name,username,email})
-
-
-   let {result,error} = await query({
-      type: 'update_user',
-      params: [name,username,email,sessionStorage.userId]
-   });
-
-   if(error) throw(error);
-
-   history.go(-1);
-}
-
-const submitDeleteAnimal = async () => {
-   let {result,error} = await query({
-      type: 'delete_animal',
-      params: [sessionStorage.animalId]
-   });
-
-   if(error) throw(error);
-   history.go(-1);
-}
-
 const submitLocationAdd = async () => {
    let animal = $("#location-animal").val();
    let lat = $("#location-lat").val();
@@ -107,7 +97,5 @@ const submitLocationAdd = async () => {
 
    history.go(-2);
 }
-
-
 
 
