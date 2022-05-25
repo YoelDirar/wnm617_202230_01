@@ -675,8 +675,9 @@ margin-top: 40px;*/
     position: absolute;
     top: -40;
     left: 0;
-    width: 374px;
-    height: 178px;
+    width: 228px;
+    height: 1047px;
+    border-radius: 50%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -687,12 +688,10 @@ margin-top: 40px;*/
     padding-right: ;
     : 71px;
     margin-left: 2;
-    margin-left: 129px;
-    margin-top: -430px;
+    margin-left: 87px;
+    margin-top: -444px;
     /* border: 4px solid gray; */
     padding-right: ;
-    : 71px;
-    margin-left: 2;
 }
 
 margin-left: 70px;margin-top: -498px;/* border: 4px solid gray; */padding-right;: 71px;margin-left: 2;
@@ -837,7 +836,7 @@ border: 1px solid #ebe2cd;}
 .edit-page-button{
   
 display:inline-block;
-padding: 0.7em 7.4em;
+padding: 0.6999999999999993em 0.40000000000000036em;
 margin: 0 21.3em 24.3em 0;
 border-radius: -30.85em;
 box-sizing: border-box;
@@ -850,7 +849,7 @@ color:  background-color: var(--color-neutral-light);
 box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
 text-align:center;
 position:relative;
-width: 152px;
+width: 162px;
 margin-top: 40px;
 
 }
@@ -868,8 +867,8 @@ margin:0.4em auto;
 }
 .user-password-button{
 display: inline-block;
-    padding: 0.7em 1.4em;
-    margin: 0 0.3em 0.3em 0;
+    padding: 0.7000000000000002em 1.4em;
+    margin: 10em 0.2999999999999998em 25.299999999999997em 0;
     border-radius: -30.85em;
     box-sizing: border-box;
     text-decoration: none;
@@ -881,9 +880,9 @@ display: inline-block;
     box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
     text-align: center;
     position: relative;
-    width: 152px;
+    width: 164px;
     margin-top: 30px;
-    margin-left: 94px;
+    margin-left: 109px;
 }
 
 .user-password-button:hover{
@@ -1001,7 +1000,8 @@ margin: 0 auto 12px 0px;}
 
 }
 #logout {
-    width: 6em;
+  margin-left: 30px;
+    width: 8em;
     height: 2em;
     background-color: #b32700;
     border: none;
@@ -1014,13 +1014,16 @@ margin: 0 auto 12px 0px;}
     border-radius: 5px;
     transition: background .5s;
     -webkit-transition: background .5s;
+}
+
+
   }
  #note{
    font-size: 1.5em;
    text-align: center;
  }
 
-.photo-bg{
+/*.photo-bg{
    width: 200px;
     height: 200px;
     object-fit: cover;
@@ -1029,13 +1032,11 @@ margin: 0 auto 12px 0px;}
     display: block;
     border: 1px solid var(--color-main-light);
     background-color: white;
-    margin-bottom: 68px;
-  margin-top: 123px;
-
-}
+    margin-bottom: 40px;
+  }*/
   .photo-prompt{
-   margin-left: 22px;
-   margin-top: 73px;
+   margin-left: 119px;
+   margin-top: 30px;
 }
 
 

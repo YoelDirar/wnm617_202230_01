@@ -140,4 +140,24 @@ ${FormControlInput({
 })}
 `;
 }
+const makeAnimalListSet = (animals, target="#list-page .animal-list") => {
+   $(".filter-bar").html(makeFilterList(animals));
+   $(target).html(makeAnimalList(animals));
+}
 
+const capitalize = s => (s[0]||"").toUpperCase()+s.slice(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>o?`<span data-filter="${type}" data-value="${o}">${capitalize(o)}</span>`:'')(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <span data-filter="type" data-value="">All</span>
+   |
+   ${filterList(animals,'type')}
+   |
+   ${filterList(animals,'breed')}
+   `;
+}

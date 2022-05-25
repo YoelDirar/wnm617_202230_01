@@ -97,5 +97,23 @@ const submitLocationAdd = async () => {
 
    history.go(-2);
 }
+const checkSearchForm = async (s) => {
+   let {result:animals,error} = await query({
+      type: 'search_animals',
+      params: [s, sessionStorage.userId]
+   });
 
+   if(error) throw(error);
 
+   makeAnimalListSet(animals);
+}
+const checkFilter = async (f,v) => {
+   let {result:animals,error} = await query({
+      type: 'filter_animals',
+      params: [f, v, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeAnimalListSet(animals);
+}

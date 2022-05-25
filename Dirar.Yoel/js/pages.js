@@ -1,5 +1,4 @@
 
-
 const RecentPage = async() => {
 
 
@@ -9,7 +8,8 @@ const RecentPage = async() => {
    });
    console.log(result);
 
-   if(error) throw error;
+   if(error) throw(error);
+
    let valid_animals = result.reduce((r,o)=>{
       o.icon = o.img;
       if(o.lat && o.lng) r.push(o);
@@ -19,13 +19,12 @@ const RecentPage = async() => {
    let map_el = await makeMap("#recent-page .map");
    makeMarkers(map_el,valid_animals)
 
-   map_el.data("markers").forEach((m, i)=>{
-   	console.log(m)
-   	m.addListener("click",function(e){
-   		let animal =  valid_animals[i];
+   map_el.data("markers").forEach((m,i)=>{
+      console.log(m)
+      m.addListener("click",function(e){
+         let animal = valid_animals[i];
 
-   		console.log(animal[i])
-
+         console.log(animal)
 
          // Just Navigate
          // sessionStorage.animalId = animal.animal_id;
@@ -57,8 +56,14 @@ const ListPage = async() => {
    
    console.log(animals)
 
-   $("#list-page .animal-list").html(makeAnimalList(animals));
+   makeAnimalListSet(animals);
 }
+
+
+
+
+
+
 
 
 
@@ -83,9 +88,6 @@ const UserEditPage = async() => {
 
    $("#user-edit-form").html(makeUserForm(user,"user-edit"))
 }
-
-
-
 const UserEditPhotoPage = async () => {
    let {result:users} = await query({
       type:'user_by_id',
@@ -100,14 +102,20 @@ const UserEditPhotoPage = async () => {
 
 
 
+
+
+
+
+
+
 const AnimalProfilePage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
    })
    let [animal] = animals;
-      $(".animal-profile-top").css({"background-image":`url(${animal.img}) `})
-      
+   $(".animal-profile-top").css({"background-image":`url(${animal.img})`})
+   
    $(".animal-profile-description").html(makeAnimalProfileDescription(animal));
 
    let {result:locations} = await query({
@@ -124,10 +132,9 @@ const AnimalEditPage = async() => {
    let {result:animals} = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
-      
    })
    let [animal] = animals;
-       $(".animal-profile-img").css({"background-image":`url(${animal.img}) `})
+
    $("#animal-edit-form").html(makeAnimalForm(animal,"animal-edit"))
 }
 const AnimalAddPage = async() => {
@@ -155,6 +162,9 @@ const AnimalEditPhotoPage = async () => {
 
 
 
+
+
+
 const ChooseLocationPage = async () => {
    let map_el = await makeMap("#choose-location-page .map");
 
@@ -167,6 +177,20 @@ const ChooseLocationPage = async () => {
 }
 
 
+const ChooseAnimalPage = async () => {
+   let {result:animals} = await query({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   });
 
+   $("#location-animal").val(animals[0]?.id);
+   $("#location-start").val(-3);
 
-
+   $("#choose-animal-input").html(FormSelect(
+      animals.map(o=>({value:o.id,text:o.name})),
+      'choose-animal',
+      'select',
+      'Choose Animal',
+      ''
+   ));
+}
