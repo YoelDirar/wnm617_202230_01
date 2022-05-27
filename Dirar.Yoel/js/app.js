@@ -1,3 +1,4 @@
+
 $(() => {
    checkUserId();
 
@@ -5,10 +6,11 @@ $(() => {
    $(document)
 
    .on("pagecontainerbeforeshow", function(event, ui){
-      console.log(ui.toPage[0].id)
+      console.log( ui.toPage[0].id)
 
-      // PAGE ROUTING
-      switch(ui.toPage[0].id) {
+     
+   // PAGE ROUTING
+         switch(ui.toPage[0].id){
          case "recent-page": RecentPage(); break;
          case "list-page": ListPage(); break;
          
@@ -21,12 +23,11 @@ $(() => {
          case "animal-add-page": AnimalAddPage(); break;
          case "animal-edit-photo-page": AnimalEditPhotoPage(); break;
 
-         case "choose-animal-page": ChooseAnimalPage(); break;
          case "choose-location-page": ChooseLocationPage(); break;
-      }
+        
+            
+         }
    })
-
-
 
 
 
@@ -47,9 +48,6 @@ $(() => {
    })
 
 
-
-
-
    // FORM SUBMISSION CLICKS
    .on("click", ".js-submit-animal-add", function() {
       submitAnimalAdd();
@@ -67,61 +65,13 @@ $(() => {
 
 
 
-
-   .on("change", "#choose-animal-input select", function(e) {
-      $("#location-animal").val(this.value);
-   })
-
-
-   .on("change",".imagepicker input", function(e){
-      checkUpload(this.files[0])
-      .then(d=>{
-         console.log(d)
-         let filename = `uploads/${d.result}`;
-         $(this).parent().prev().val(filename)
-         $(this).parent().css({
-            "background-image":`url(${filename})`
-         }).addClass("picked");
-      })
-   })
-   .on("click", ".js-submit-user-upload", function(e) {
-      let image = $("#user-edit-photo-image").val();
-      query({
-         type: "update_user_image",
-         params: [image, sessionStorage.userId]
-      }).then(d=>{
-         if(d.error) throw(d.error);
-         history.go(-1);
-      })
-   })
-   .on("click", ".js-submit-animal-upload", function(e) {
-      let image = $("#animal-edit-photo-image").val();
-      query({
-         type: "update_animal_image",
-         params: [image, sessionStorage.animalId]
-      }).then(d=>{
-         if(d.error) throw(d.error);
-         history.go(-1);
-      })
-   })
-
-
-   .on("click", "[data-filter]", function(e) {
-      let {filter,value} = $(this).data();
-      if(value=="") ListPage();
-      else checkFilter(filter,value);
-   })
-
-
-
    // CLICKS
    .on("click", ".js-logout", function() {
       sessionStorage.removeItem("userId");
       checkUserId();
    })
 
-
-   .on("click", ".js-animal-jump", function(e) {
+    .on("click", ".js-animal-jump", function(e) {
       try {
          e.preventDefault();
          sessionStorage.animalId = $(this).data('id');
@@ -130,19 +80,17 @@ $(() => {
          throw("No id detected");
       }
    })
-   .on("click",".js-animal-delete", function(e) {
+       .on("click",".js-animal-delete", function(e) {
       submitDeleteAnimal();
    })
-   .on("click",".js-location-choose-animal", function(e) {
+    .on("click",".js-location-choose-animal", function(e) {
       $("#location-animal").val(sessionStorage.animalId)
-      $("#location-start").val(-2);
    })
 
 
 
 
-
-   .on("click", ".animal-profile-nav>div", function(e) {
+     .on("click", ".animal-profile-nav>div", function(e) {
       let id = $(this).index();
       $(this).parent()
          .next().children().eq(id)
@@ -151,7 +99,6 @@ $(() => {
       $(this).addClass("active")
          .siblings().removeClass("active")
    })
-
 
    // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {

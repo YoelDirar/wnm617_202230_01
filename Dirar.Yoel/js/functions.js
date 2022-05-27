@@ -8,11 +8,11 @@ const query = (options) => {
 }
 
 
+
 // Curried Function
 const templater = f => a =>
    (Array.isArray(a)?a:[a])
    .reduce((r,o,i,a)=>r+f(o,i,a),'');
-
 
 const checkData = (exterior_check) => new Promise((resolve,reject)=>{
    let timeout = 0;
@@ -22,7 +22,6 @@ const checkData = (exterior_check) => new Promise((resolve,reject)=>{
    }
    interior_check();
 });
-
 
 const checkUpload = file => {
    let fd = new FormData();

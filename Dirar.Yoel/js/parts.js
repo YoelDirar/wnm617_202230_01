@@ -16,22 +16,18 @@ const makeAnimalList = templater(o=>`
 `);
 
 
-
 const makeUserProfilePage = o => `
    
-
 <div class="user-profile-head">
   <div class="profile-name" style="margin-top: 15px;">${o.name}</div>
       <img src="${o.img}">
-      <a href="#user-edit-photo-page" class="floater left bottom"><img src="imgs/icons/pencil.svg" class="edit-icon"></a>
+      <a href="#user-edit-photo-page">edit photo</a>
       <p  class="edit-text"> Edit Photo</p>
 </div>
 <hr>
-
    <form class="user-page">
             <p class="title-user">NAME</p>
             <p class="user-info">${o.name}</p>
-
             
             <p class="title-user">USERNAME</p>
             <p class="user-info">&commat;${o.username}</p>
@@ -39,19 +35,18 @@ const makeUserProfilePage = o => `
             
             <p class="title-user">EMAIL</p>
             <p class="user-info">${o.email}</p>
-            <br>
+            
+             <a href="#user-settings-page">Settings</a>s
    </form>
+
          
 `;
 
 
 
-
-
-
 const makeAnimalProfileDescription = o => `
 <h2>${o.name}</h2>
-<div>${o.breed}</div>
+<div>${o.bread}</div>
 `;
 
 

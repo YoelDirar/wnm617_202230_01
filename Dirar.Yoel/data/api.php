@@ -47,18 +47,6 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
    }
 }
 
-function makeUpload($file,$folder) {
-   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
-
-   if(@move_uploaded_file(
-      $_FILES[$file]['tmp_name'],
-      $folder.$filename
-   )) return ["result"=>$filename];
-   else return [
-      "error"=>"File Upload Failed",
-      "filename"=>$filename
-   ];
-}
 
 
 
@@ -144,9 +132,25 @@ function makeStatement($data) {
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
       
-   
 
 
+      
+ /* DELETE */
+
+      case "delete_animal":
+         $r = makeQuery($c,"DELETE FROM
+            `track_animals`
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+       case "check_signin":
+         return makeQuery($c, "SELECT id from `track_users` WHERE `username` = ? AND `password` = md5(?)", $p);
+
+      default:
+         return ["error"=>"No Matched Type"];
 
 
           /* UPDATE */
@@ -197,45 +201,6 @@ function makeStatement($data) {
          return ["result"=>"Success"];
 
 
-         
- /* UPLOAD */
-
-      case "update_user_image":
-         $r = makeQuery($c,"UPDATE
-            `track_users`
-            SET `img` = ?
-            WHERE `id` = ?
-            ",$p,false);
-         if(isset($r['error'])) return $r;
-         return ["result"=>"Success"];
-
-      case "update_animal_image":
-         $r = makeQuery($c,"UPDATE
-            `track_animals`
-            SET `img` = ?
-            WHERE `id` = ?
-            ",$p,false);
-         if(isset($r['error'])) return $r;
-         return ["result"=>"Success"];
-
-      
- /* DELETE */
-
-      case "delete_animal":
-         $r = makeQuery($c,"DELETE FROM
-            `track_animals`
-            WHERE `id` = ?
-            ",$p,false);
-         if(isset($r['error'])) return $r;
-         return ["result"=>"Success"];
-
-
-       case "check_signin":
-         return makeQuery($c, "SELECT id from `track_users` WHERE `username` = ? AND `password` = md5(?)", $p);
-
-      default:
-         return ["error"=>"No Matched Type"];
-
 
    }
 }
@@ -254,25 +219,9 @@ function makeStatement($data) {
 
 
 
-if(!empty($_FILES)) {
-   $r = makeUpload("image","../uploads/");
-   die(json_encode($r));
-}
-
 $data = json_decode(file_get_contents("php://input"));
 
 echo json_encode(
    makeStatement($data),
    JSON_NUMERIC_CHECK
 );
-
-
-
-
-
-
-
-
-
-
-

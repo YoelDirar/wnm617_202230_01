@@ -53,11 +53,10 @@
       <div data-role="main" class="display-flex flex-column">
          
           <img src="imgs/logo2.png"  class="hero-image" alt="hero">
-             <h1 class= "hero-title">Secret Squirrel's</h1>
+             <h1 class = "hero-title">Secret Squirrel's</h1>
          </div>
   
          <form id="signin-form" class="form" data-ajax="false">
-             
             <div class="form-control">
               <!--  <label for="signin-username" class="form-label">Username</label> -->
                <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
@@ -70,18 +69,19 @@
             <div class="form-control">
                <button type="submit" class="form-button" data-role="none" style="text-align:">Submit</button>
             </div>
-
-         
-            <hr>
+ <hr>
         
           <div class="sign-up-form-control">
                 <p class="sign-up-text">Dont have an account?</p>
-                <a href="#signup-page"  style="text-decoration:underline;">Sign up! </a>
+    <a href="#signup-page"  style="text-decoration:underline;">Sign up! </a>
             </div>
 
            <div class="flex-stretch"></div>
 
-         
+          <!--   <div class="sign-up-form-control" >
+               <p>New to the app? <a href="#signup-page" class="signup-page-signup-link">Sign Up!</a></p>
+            </div> -->
+
          </form>
 
            <div class="flex-stretch"></div>
@@ -138,16 +138,48 @@
 
 
 
-
+ <!--  <header data-role="header">
+         <h1></h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+               <li class="flex-stretch"></li>
+           <li> <a href="#choose-animal-page" class="add-button" >Add</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#animal-edit-page">Edit</a></li>
+         </ul>
+      </header> -->
 
 
 
 <!---------------RECENT-PAGE---------------------------------------->
 
    <section data-role="page" id="recent-page">
+      <header data-role="header" >
+        <ul>
+          <li> 
+            <!-- <div class="marker" style="position:absolute;top:50vh;left:20vw" data-activate="#map-drawer"> -->
+              <img src="imgs/icons/hamburger-menu.svg" class="nav-icon icon floater top left"  data-activate="#map-drawer" style="left:9px;top: 9px;">
+            </div>
+          </li>
+            
+         <li>
+           <!--  <h1 class="text-center" id=" active app-title" style="font-size:1.5em">Secret Squirrel's</h1> -->
+         </li>
+    <!--      <li>
+            <div>
+                <a href="#choose-animal-page">add 
+            </div>
+           
+         </li>
+ -->
+      </ul>
+      </header>
+     
       <div data-role="main">
-         <div class="map"></div>
-         <div class="recent-search">
+          <div class="map"></div>
+      
+           
+     <!--     <div class="recent-search">
             <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
                 <input type="search"  class= "hotdog-recent" data-role="none" placeholder="Search" style= 
                      "width: 80%;
@@ -155,21 +187,42 @@
                      padding: 0.6em;
                    border-radius: 25px;">
           </div>
-          </form>
+         </form>
          
-      </div>
-      <a href="#animal-add-page" class="floater bottom right circle-button">&plus;</a>
-
- 
-
+      </div> <--></-->
+   </div>
+         <!-- <a href="#choose-animal-page" class="floater bottom right circle-button" >+</a> -->
       <footer data-role="footer" data-template="#footer-template"></footer>
 
+     
       <div class="modal" id="map-drawer">
          <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
-         <div class="modal-drawer top">
-         <div class="modal-body"></div>
+         <div class="modal-drawer left">
+            <div class="modal-head display-flex">
+               <div class="flex-align-center"></div>
+               <div class="flex-stretch"></div>
+               <div class="flex-none">
+                  <a href="#" data-deactivate="#map-drawer">&times;</a>
+               </div>
+               
+            </div>
+            <div class="modal-body flex-column">
+                <div class="modal-links">
+                <a href="#choose-location-page"><h1>Spot</h1></a>
+              </div>
+              <div class="modal-links">
+                <a href="#user-profile-page"><h1>Profile</h1></a>
+              </div>
+                <div class="modal-links"> 
+                 <a href="#"><h1>Intel</h1></a>
+              </div>
+              <div class="modal-links"> 
+                 <a href="#user-settings-page"><h1>Settings</h1></a>
+              </div>
+            </div>
          </div>
       </div>
+
    </section>
 
 
@@ -182,16 +235,15 @@
    
   <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Squirrel List</h1>
+         <h1>Animal List</h1>
          <ul>
             <li class="flex-stretch"></li>
-             <li> <a href="#animal-add-page">Add</a></li>
          </ul>
       </header>
       <div data-role="main">
          <ul class="animal-list"></ul>
 
-        
+         <a href="#animal-add-page" class="floater bottom right circle-button">&plus;</a>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
@@ -205,18 +257,13 @@
 
 
 
-
- 
-
-
-
-  <section data-role="page" id="animal-profile-page">
+ <section data-role="page" id="animal-profile-page">
       <header data-role="header">
          <h1></h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
                <li class="flex-stretch"></li>
-           <li> <a href="#choose-animal-page" class="add-button" >Add</a></li>
+           <li> <a href="#" class= "js-jump-choose-location-page" class="add-button" >Add</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#animal-edit-page">Edit</a></li>
          </ul>
@@ -225,9 +272,14 @@
       </header>
          <img src="imgs/squirrel-profile-bg.svg"  class="profile-bg">
       <div data-role="main">
-         <div class="animal-profile-top">
-        
-             <a href="#animal-edit-photo-page" class="js-animal-edit-photo-page noclick-children" id="pencil-icon"><img src ="imgs/icons/pencil.svg"class="icon";></a>
+          <div class="animal-profile-top">
+                <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src ="imgs/icons/trash.svg"class="icon";></a>
+            <a href="#animal-edit-photo-page" class="js-animal-edit-photo-page noclick-children">fdasdsf<img src="imgs/icons/pencil.svg" class="icon";></a>
+
+
+             
+
+
          </div>
 
          <div class="animal-profile-nav">
@@ -247,6 +299,11 @@
    </section>
 
 
+ 
+
+  
+
+
 
 
 
@@ -261,17 +318,19 @@
 
   <section data-role="page" id="animal-add-page">
       <header data-role="header">
-         <h1>New Animal</h1>
+         <h1>New Squirrel</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#recent-page" class="js-submit-animal-add">Save</a></li>
+            <li><a href="#" class="js-submit-animal-add">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
          <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form> 
          </div>
    </section>
+
+
 
 
 
@@ -288,35 +347,8 @@
             <li><a href="#" class="js-submit-animal-edit">Save</a></li>
          </ul>
       </header>
-      <div data-role="main" style="margin-top: 90px";>
-         <img src="imgs/squirrel-profile-bg.svg"  class="edit-bg">
-         <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
-         </form>
-      </div>
-           <a href="#" class="js-animal-delete noclick-children floater bottom left " id="delete-squirrel">
-            <img src ="imgs/icons/trash.svg"class="icon"></a>
-   </section>
-
-
-
-
-
-
-   <section data-role="page" id="animal-edit-photo-page">
-      <header data-role="header">
-         <h1>Upload Photo</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-submit-animal-upload">Save</a></li>
-         </ul>
-      </header>
       <div data-role="main">
-         <img src="imgs/squirrel-profile-bg.svg"  class= "upload-bg">
-         <input type="hidden" id="animal-edit-photo-image">
-         <label class="imagepicker replace">
-            <input type='file' id="animal-edit-photo-input" data-role="none">
-         </label>
+         <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em"> </form>
       </div>
    </section>
 
@@ -333,47 +365,22 @@
 
 
 
-
-   <section data-role="page" id="choose-animal-page" flex-column>
+<!-- 
+   <section data-role="page" id="choose-animal-page">
       <header data-role="header">
-         <h1>Choose type of Squirrel</h1>
+         <h1>Choose Squirrel</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#choose-location-page">Next</a></li>
          </ul>
       </header>
-       <div class="flex-stretch"></div>
-      <div data-role="main" class="display-flex " style="padding:1em">
-        <div class="card">
-        <img src="imgs/westGray.svg"> </div>
-        
-      </div>
-
- 
-
-       
-
-        
-
-    
-      <div data-role="main" class="display-flex " style="padding:1em">
-        <p></p>
-      </div>
-     <div data-role="main">
+      <div data-role="main">
          <input type="hidden" id="location-animal">
-       </div>
-
-
-   </section>
-
-
-
-
-
+      </div>
+   </section> -->
  
    
-     
    <section data-role="page" id="choose-location-page">
       <header data-role="header">
          <h1>Choose Location</h1>
@@ -390,7 +397,8 @@
       </div>
    </section>
 
-          <section data-role="page" id="choose-description-page">
+    
+      <section data-role="page" id="choose-description-page">
       <header data-role="header">
          <h1>Describe The Squirrel</h1>
          <ul>
@@ -412,11 +420,7 @@
 
 
 
-
-
-
-
-
+            
       
              
   
@@ -426,96 +430,40 @@
 
  <section data-role="page" id="user-profile-page">
       <header data-role="header">
-
-       
-   <h1>Squirrel List</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-             <li> <a href="#user-settings-page">Settings</a></li>
-         </ul>
-</ul>
-    </header>
-      <div data-role="main" class="display-flex flex-column"style="overflow: auto;">
+            <h1>Profile</h1>
+               <ul>
+                  <li class="flex-stretch"></li>
+               </ul>
+      </header>
+        <div data-role="main" class="display-flex flex-column"style="overflow: auto;">
         
 
       </div>
-
-
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
 
 
 
-  
-        
-     
 
 
-<!---------------EDIT USER SETTINGS PAGE---------------------------------------->
 
-<section data-role="page" id="user-settings-page"  >
+
+   <section data-role="page" id="user-settings-page">
       <header data-role="header">
          <h1>User Settings</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
          </ul>
       </header>
-
-
-
       <div data-role="main">
-           <form id="user-settings-page"class="overscroll" data-ajax="false" style="padding:1em">
-        
-     <div class="flex-stretch"></div>
-       
-            <a href="#user-edit-page" class="edit-page-button  flex-column" >User Info</a>
-                        <a href="#user-password-page" class="user-password-button flex-column"> Password</a>
-             </form>
-         <hr>   
-         <div class="flex-stretch"></div>
-         <button id="logout" formaction="#" class="js-logout">
-        Log Out
-      </button>
+         <ul>
+            <li><a href="#user-edit-page">Edit User</a></li>
+            <li><a href="#user-password-page">Edit Password</a></li>
+            <li><a href="#" class="js-logout">Logout</a></li>
+         </ul>
       </div>
    </section>
-<!-- 
-   
-      
- 
-
- 
-  
- 
-
-  
- 
-
-<hr>
-  </div>
-  <br>
-  <button id="logout" formaction="#" class="js-logout">
-        Log Out
-      </button>
-  <button id="deleteaccount">
-     Delete Account
-  </button> 
-  <button id="savechanges">
-    Save Changes
-  </button>
-  <br>
-   -->
-             
-
-
-
-<!-- 
-         <form id="signin-form" class="form" data-ajax="false">
-            <div class="form-control">
-               <label for="signin-username" class="form-label">Username</label>
-               <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Type your Username">
-            </div> -->
-
 
    <section data-role="page" id="user-edit-page">
       <header data-role="header">
@@ -544,11 +492,11 @@
             <div>
                <div class="form-control">
                   <label for="user-password-new" class="form-label">New Password</label>
-                  <input class="form-input" type="password" placeholder="********" id="user-password-new" data-role="none">
+                  <input class="form-input" type="password" id="user-password-new" data-role="none">
                </div>
                <div class="form-control">
                   <label for="user-password-repeat" class="form-label">Repeat Password</label>
-                  <input class="form-input" type="password" placeholder="********" id="user-password-repeat" data-role="none">
+                  <input class="form-input" type="password" id="user-password-repeat" data-role="none">
                </div>
             </div>
             <div class="flex-stretch"></div>
@@ -562,24 +510,6 @@
 
    
 
-   <section data-role="page" id="user-edit-photo-page">
-      <header data-role="header">
-         <h1>Upload Photo</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-submit-user-upload">Save</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         <div class="photo-bg"> <p class= "photo-prompt fill-parent ">Press to change photo!</p></div>
-         <p class= "photo-prompt"></p>
-         <input type="hidden" id="user-edit-photo-image">
-         <label class="imagepicker replace">
-            <input type='file' id="user-edit-photo-input" data-role="none">
-         </label>
-      </div>
-   </section>
 
 
 
@@ -593,16 +523,11 @@
 
 
 
-
-
-
-
-
-   <script type="text/template" id="footer-template">
+ <script type="text/template" id="footer-template">
       <ul class="nav-icon-set">
          <li><a href="#recent-page" data-activateone=".nav-icon-set li:nth-child(1)">
             <span class="nav-icon"><img class="icon" src="imgs/icons/map.svg"></span>
-            <span class="nav-icon-label">Recent</span>
+            <span class="nav-icon-label">Spotted</span>
          </a></li>
          <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
             <span class="nav-icon"><img class="icon" src="imgs/icons/list.svg"></span>

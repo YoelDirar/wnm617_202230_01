@@ -40,8 +40,13 @@ const RecentPage = async() => {
 
          $("#map-drawer")
             .addClass("active")
+            .find(".modal-head")
+
             .find(".modal-body")
-            .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
+            .html(makeAnimalPopupBody({...animal, id:animal.animal_id}));
+   
+
+
       })
    })
 }
@@ -76,9 +81,11 @@ const UserProfilePage = async() => {
    let [user] = users;
 
    console.log(user)
-
-   $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
+  $("#user-profile-page [data-role='main']").html(makeUserProfilePage(user));
 }
+
+
+
 const UserEditPage = async() => {
    let {result:users} = await query({
       type:'user_by_id',
@@ -88,6 +95,10 @@ const UserEditPage = async() => {
 
    $("#user-edit-form").html(makeUserForm(user,"user-edit"))
 }
+
+
+
+
 const UserEditPhotoPage = async () => {
    let {result:users} = await query({
       type:'user_by_id',
@@ -97,6 +108,7 @@ const UserEditPhotoPage = async () => {
 
    $("#user-edit-photo-page .imagepicker").css({
       "background-image":`url(${user.img})`
+
    })
 }
 
@@ -113,9 +125,12 @@ const AnimalProfilePage = async() => {
       type:'animal_by_id',
       params:[sessionStorage.animalId]
    })
-   let [animal] = animals;
-   $(".animal-profile-top").css({"background-image":`url(${animal.img})`})
    
+   let [animal] = animals;
+  
+   $('selector expression').before('content');
+   $(".animal-profile-top").css({"background-image":`url(${animal.img})`});
+  
    $(".animal-profile-description").html(makeAnimalProfileDescription(animal));
 
    let {result:locations} = await query({
@@ -174,23 +189,4 @@ const ChooseLocationPage = async () => {
       $("#location-lng").val(e.latLng.lng())
       makeMarkers(map_el,[e.latLng])
    })
-}
-
-
-const ChooseAnimalPage = async () => {
-   let {result:animals} = await query({
-      type:'animals_by_user_id',
-      params:[sessionStorage.userId]
-   });
-
-   $("#location-animal").val(animals[0]?.id);
-   $("#location-start").val(-3);
-
-   $("#choose-animal-input").html(FormSelect(
-      animals.map(o=>({value:o.id,text:o.name})),
-      'choose-animal',
-      'select',
-      'Choose Animal',
-      ''
-   ));
 }
